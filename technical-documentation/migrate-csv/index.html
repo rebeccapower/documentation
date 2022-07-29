@@ -274,6 +274,8 @@
     
       
     
+      
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -635,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/audio.md" class="md-nav__link">
+      <a href="../../models/audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/video.md" class="md-nav__link">
+      <a href="../../models/video/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3508,7 +3510,7 @@
 <p>This tutorial (and Islandora in general) makes heavy use of Features, which is an easy way to ship and install Drupal configuration. However, after enabling a Feature module, the code in that module's directory is no longer "live", as the configuration now resides in the Drupal database. If you change code in the YAML files, it will not take effect until you re-import the Feature. There is a walkthrough in the "Configuration" section of the <a href="https://github.com/Islandora-Devops/migrate_7x_claw">Migrate 7.x to Islandora</a> tutorial.</p>
 </div>
 <p>Sample CSV and images are also included in the module as a convenience so they are easily available on the Drupal server running the migration. (This is not the recommended method for making files available to Drupal in a real migration.)</p>
-<p>The module also contains a Migrate process plugin that transforms strings into associative arrays. This is useful for populating multiple Linked Agent fields. (See "<a href="../user-documentation/metadata/#typed-relation">Typed Relation</a>" for more information on the Linked Agent field.) It will be available when this module is enabled, and the node migration uses it. It was written generically and will hopefully become part of Migrate Plus, but for now it is here.</p>
+<p>The module also contains a Migrate process plugin that transforms strings into associative arrays. This is useful for populating multiple Linked Agent fields. (See "<a href="../../user-documentation/metadata#typed-relation">Typed Relation</a>" for more information on the Linked Agent field.) It will be available when this module is enabled, and the node migration uses it. It was written generically and will hopefully become part of Migrate Plus, but for now it is here.</p>
 <p>When you are ready to create your actual migrations, the contents of this repository can function as a template for you to create the YAML files defining your own migrations.</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p><strong>Why CSV?</strong> CSV files (whether separated by commas, tabs, or other delimiters) are easy to understand and work with, and there's good tooling available for using them with Drupal's <a href="https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-api-overview">Migrate API</a>. The Drupal contrib module <a href="https://www.drupal.org/project/migrate_source_csv">migrate_source_csv</a> provides a source plugin that reads from a CSV file, and <a href="https://www.drupal.org/project/migrate_plus/">migrate_plus</a> provides more tools and flexibility for creating migrations, including the ability to create customized migrations using YAML and package them up as <a href="https://www.drupal.org/project/features/">Features</a>.</p>
@@ -4200,7 +4202,7 @@ migration_dependencies:
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
       </span>
     
     

@@ -121,11 +121,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://islandora.github.io/documentation/installation/docker-download/</loc>
-         <lastmod>2022-07-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://islandora.github.io/documentation/installation/docker-introduction/</loc>
          <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
@@ -217,6 +212,16 @@
     </url>
     <url>
          <loc>https://islandora.github.io/documentation/islandora/rdf-mapping/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://islandora.github.io/documentation/models/audio/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://islandora.github.io/documentation/models/video/</loc>
          <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>

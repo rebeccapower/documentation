@@ -274,6 +274,8 @@
     
       
     
+      
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -669,6 +671,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#deleting-a-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting A Collection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-on-a-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions on a Collection
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -703,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/audio.md" class="md-nav__link">
+      <a href="../../models/audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/video.md" class="md-nav__link">
+      <a href="../../models/video/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3105,6 +3125,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#deleting-a-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting A Collection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-on-a-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions on a Collection
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3133,21 +3171,42 @@
 <h2 id="islandora-features">Islandora features<a class="headerlink" href="#islandora-features" title="Permanent link">&para;</a></h2>
 <p>Islandora provides:</p>
 <ul>
-<li>a generic "member of" relationship field (<code>field_member_of</code>) to group objects under a "parent" object. This mechanism is shared by <em>Collections</em> with similar use cases: <a href="../../user-documentation/paged-content/">Paged Content</a> and <em>Compound Objects</em>. Islandora on its own does not prescribe any particular <a href="../../user-documentation/content_types/">Content Type</a>, so this field can be configured for any <a href="https://www.drupal.org/docs/drupal-apis/entity-api/bundles">node bundle</a> intended to represent Islandora resources.</li>
-<li>a "Children" tab on resources, which provides a management interface to access, re-order, add, or delete the members of a resource.</li>
-<li>a "Model" field (<code>field_model</code>) which can take various values including "Collection"</li>
+<li>a mechanism for grouping nodes under a "Parent" node through the generic "Member Of" relationship field (<code>field_member_of</code>). This mechanism is also used by <em><a href="../../user-documentation/paged-content/">Paged Content</a></em> and <em>Compound Objects</em>. Islandora on its own does not prescribe any particular <a href="../../user-documentation/content_types/">Content Type</a>, so this field can be configured for any <a href="https://www.drupal.org/docs/drupal-apis/entity-api/bundles">node bundle</a> intended to represent Islandora resources.</li>
+<li>a "Children" tab on resources, which provides a management interface to access, re-order, add, or delete the members of a resource based on the Member Of field.</li>
+<li>a "Model" field (<code>field_model</code>) which can take various values including "Collection".</li>
 </ul>
 <h2 id="islandora-defaults-features">Islandora Defaults features<a class="headerlink" href="#islandora-defaults-features" title="Permanent link">&para;</a></h2>
 <p><a href="../../reference/islandora_defaults_reference/">Islandora Defaults</a> is an optional collection of presets for Islandora, intended to provide a more user-friendly out-of-the-box experience and starting point for more specific customization. </p>
 <p>Islandora Defaults provides:</p>
 <ul>
-<li>a <a href="../../user-documentation/content_types/">Content Types</a> "Repository Item" that uses the <code>field_member_of</code> field, so that users may add nodes of this type to a collection (or paged content, or compound resource),</li>
-<li>logic (a <a href="../../user-documentation/context/">Context</a>) such that if a resource is tagged as a "collection", a view of its members will show on the collection's page.</li>
+<li>a <a href="../../user-documentation/content_types/">Content Type</a> "Repository Item" that uses the <code>field_member_of</code> field, so that users may add nodes of this type to a collection (or paged content, or compound resource),</li>
+<li>A <a href="../../tutorials/create_update_views/">View</a> showing the members of the collection.</li>
+<li>logic (a <a href="../../user-documentation/context/">Context</a>) such that if a resource is tagged as a "Collection" (in the "Model" field, then a view of its members will show on the collection's page.</li>
 </ul>
 <p>For more details, see the tutorial on <a href="../../tutorials/how-to-create-collection/">How to create and add to a collection</a></p>
 <h2 id="bulk-management-of-members-of-a-collection">Bulk management of members of a collection<a class="headerlink" href="#bulk-management-of-members-of-a-collection" title="Permanent link">&para;</a></h2>
-<p>Bulk management of items can be done using the Drupal contrib module <a href="https://www.drupal.org/project/views_bulk_edit">Views Bulk Edit</a>. In short, build a view using this module, and you will be able to perform Drupal Actions on sets of objects. Neither Islandora nor Islandora Defaults provide out-of-the-box management tools, but the sandbox provides some sample content and views that use Views Bulk Edit.</p>
+<p>Bulk management of items can be done from a Views Bulk Operations-compatible View, including the main Drupal Content View (at admin/content) and the Manage Members View (at node/[node]/members). This is possible due to the Drupal contrib modules <a href="https://www.drupal.org/project/views_bulk_operations">Views Bulk Operations (VBO)</a> and <a href="https://www.drupal.org/project/views_bulk_edit">Views Bulk Edit</a>. VBO allows you to perform Drupal Actions on objects. These Actions include making Islandora Derivatives such as "Audio - Generate a Service File from an Original File" and also to perform Drupal core Actions such as publishing/unpublishing content. The Views Bulk Edit module extends VBO and allows you to edit field values (such as the Member Of field, which would change which collection a group of nodes are in). </p>
+<p>For instance, if you want to move a number of nodes from one collection into another, then you can </p>
+<ul>
+<li>select them all in a View such as the Members view of a collection</li>
+<li>select "Edit content" from the Action dropdown, and click "Apply to selected Items"</li>
+<li>under "SELECT FIELDS TO CHANGE", select "Member of"</li>
+<li>in the Member Of autocomplete that appears, type the name of the target collection</li>
+<li>Careful! Under "Change method", choosee between "Replace the current value" and "Add a new value to the multivalue field". The first one will wipe out ALL existing collections including the one you're working on - which may be what you're after.</li>
+<li>Select "Confirm" at the bottom of the form to save your changes.</li>
+</ul>
 <p>For more information see the video tutorial on <a href="https://youtu.be/ZMp0lPelOZw">Batch Editing</a>.</p>
+<h2 id="deleting-a-collection">Deleting A Collection<a class="headerlink" href="#deleting-a-collection" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Deleting Collections creates orphans.</p>
+<p>When you delete a Collection object, it will be deleted from the "Member of" field of all its Children. This means that it will not be possible to track down the children after the Collection has been deleted. If you intend to move the children, see above. If you intend to delete the children, this must be done before-hand. This is a <a href="https://github.com/Islandora/documentation/issues/628">known issue</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Deleting content creates orphan media.</p>
+<p>Deleting content (Collections or otherwise) will NOT delete any attached Media. This is a <a href="https://github.com/Islandora/documentation/issues/909">known issue</a>.</p>
+</div>
+<h2 id="permissions-on-a-collection">Permissions on a Collection<a class="headerlink" href="#permissions-on-a-collection" title="Permanent link">&para;</a></h2>
+<p>No reliable access control methods currently allow you to assign people to administer and manage only specific collections.</p>
 
   
     
@@ -3161,7 +3220,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
       </span>
     
     
