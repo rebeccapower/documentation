@@ -3542,6 +3542,10 @@ hidden.</p>
 - Subject</p>
 <p>Each of these vocabularies has its own set of fields allowing repositories to further describe them. The Repository Item content type has fields that can reference terms in these vocabularies. See 'Entity Reference fields' in the 'Field Types' section below.</p>
 <p>The vocabularies provided by default are a starting point, and a repository administrator can create whatever vocabularies are desired.</p>
+<div class="admonition warning">
+<p class="admonition-title">Large Taxonomy Vocabularies</p>
+<p>The Drupal Taxonomy UI is known to break down when your vocabularies get large (e.g. over 20,000 terms). Jonathan Hunt created the <a href="https://github.com/catalyst/cca_taxonomy_manager">CCA Taxonomy Manager</a> module for SFU to solve this problem.</p>
+</div>
 <h2 id="field-types">Field Types<a class="headerlink" href="#field-types" title="Permanent link">&para;</a></h2>
 <p>Fields are where descriptive and administrative metadata about Drupal entities is stored. There are different <em>types</em> of fields including boolean, datetime, entity reference, integer, string, text, and text_with_summary. These field types also have <em>widgets</em> (controlling how data is entered) and <em>formatters</em> (controlling how data is displayed). The <a href="https://www.drupal.org/docs/8/api/entity-api/fieldtypes-fieldwidgets-and-fieldformatters">Drupal 8 documentation on FieldTypes, FieldWidgets, and FieldFormatters</a> includes a list of the core field types with brief definitions, along with a list of core widgets and formatters. <a href="https://www.drupal.org/docs/creating-custom-modules/creating-custom-field-types-widgets-and-formatters">Custom field types can be created</a> to represent data in ways not provided by these core options.</p>
 <p>More field types, formatters, and widgets are available in various modules.For example, the controlled_access_terms module provides two additional field types designed specifically for use with Islandora: ETDF, and Typed Relation. These and the Entity Reference field type are described in more detail below, since they are of particular interest for Islandora users.</p>
@@ -3762,7 +3766,7 @@ seasonal value 2019-22 as defined in the EDTF specification):
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
       </span>
     
     
