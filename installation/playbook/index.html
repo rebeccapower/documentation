@@ -1190,18 +1190,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-usage-standard" class="md-nav__link">
+  <a href="#basic-usage-local-islandora-defaults" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Usage (standard):
+      Basic Usage (local, Islandora Defaults):
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-usage-install-profile-demo" class="md-nav__link">
+  <a href="#basic-usage-local-install-profile-demo" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Usage (install profile "demo"):
+      Basic Usage (local, Install Profile Demo):
     </span>
   </a>
   
@@ -1216,24 +1216,6 @@
   
     <nav class="md-nav" aria-label="Requirements">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing-git-openssl-and-ansible-on-ubuntudebian" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing Git, OpenSSL, and Ansible on Ubuntu/Debian
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing-git-openssl-and-ansible-on-centos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing Git, OpenSSL and Ansible on CentOS
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#installing-git-and-ansible-on-macos" class="md-nav__link">
@@ -1283,13 +1265,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-a-remote-environment" class="md-nav__link">
+  <a href="#deploying-to-a-remote-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing a remote environment
+      Deploying to a remote environment
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installing a remote environment">
+    <nav class="md-nav" aria-label="Deploying to a remote environment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3285,18 +3267,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-usage-standard" class="md-nav__link">
+  <a href="#basic-usage-local-islandora-defaults" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Usage (standard):
+      Basic Usage (local, Islandora Defaults):
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-usage-install-profile-demo" class="md-nav__link">
+  <a href="#basic-usage-local-install-profile-demo" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Usage (install profile "demo"):
+      Basic Usage (local, Install Profile Demo):
     </span>
   </a>
   
@@ -3311,24 +3293,6 @@
   
     <nav class="md-nav" aria-label="Requirements">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing-git-openssl-and-ansible-on-ubuntudebian" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing Git, OpenSSL, and Ansible on Ubuntu/Debian
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing-git-openssl-and-ansible-on-centos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing Git, OpenSSL and Ansible on CentOS
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#installing-git-and-ansible-on-macos" class="md-nav__link">
@@ -3378,13 +3342,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-a-remote-environment" class="md-nav__link">
+  <a href="#deploying-to-a-remote-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing a remote environment
+      Deploying to a remote environment
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installing a remote environment">
+    <nav class="md-nav" aria-label="Deploying to a remote environment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3534,16 +3498,19 @@
 
 
 <h1 id="islandora-playbook">Islandora Playbook<a class="headerlink" href="#islandora-playbook" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p>The playbook is in maintenance mode as new development is focused on <a href="https://islandora.github.io/documentation/installation/docker-compose/">ISLE</a> for development and production.</p>
+<div class="admonition note">
+<p class="admonition-title">Still Alive</p>
+<p>Reports of the playbook's demise have been exaggerated. It is still in use and being maintained. Local VMs (VirtualBox) cannot be run on M1 series Apple silicon at this time, but you can use the remote deployment option to deploy Islandora on low-cost virtual hosting.  </p>
 </div>
-<p>The Islandora Playbook (<a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora-Devops/islandora-playbook</a>) is a tool for installing either Islandora Defaults or the Islandora Install Profile Demo on a single virtual machine. It can be used both as a <a href="https://www.vagrantup.com/">Vagrant</a> project to create a local development environment, and/or the <a href="https://www.ansible.com/community">Ansible</a> playbook can be used directly to provision a local or remote server.</p>
-<h2 id="basic-usage-standard">Basic Usage (standard):<a class="headerlink" href="#basic-usage-standard" title="Permanent link">&para;</a></h2>
+<p>The Islandora Playbook (<a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora-Devops/islandora-playbook</a>) is a tool for installing the Islandora stack on a single virtual machine. It can be used both as a <a href="https://www.vagrantup.com/">Vagrant</a> project to create a local development environment, or as an <a href="https://www.ansible.com/community">Ansible</a> playbook to provision a local or remote server. It can set up a Drupal based either on Islandora Defaults, or on the Install Profile Demo. </p>
+<h2 id="basic-usage-local-islandora-defaults">Basic Usage (local, Islandora Defaults):<a class="headerlink" href="#basic-usage-local-islandora-defaults" title="Permanent link">&para;</a></h2>
+<p>Install requirements, then:</p>
 <pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
 $ cd islandora-playbook
 $ vagrant up
 </code></pre>
-<h2 id="basic-usage-install-profile-demo">Basic Usage (install profile "demo"):<a class="headerlink" href="#basic-usage-install-profile-demo" title="Permanent link">&para;</a></h2>
+<h2 id="basic-usage-local-install-profile-demo">Basic Usage (local, Install Profile Demo):<a class="headerlink" href="#basic-usage-local-install-profile-demo" title="Permanent link">&para;</a></h2>
+<p>Install requirements, then:</p>
 <pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
 $ cd islandora-playbook
 $ export ISLANDORA_INSTALL_PROFILE=demo
@@ -3558,29 +3525,8 @@ $ vagrant up
 <li><a href="https://www.openssl.org/">OpenSSL</a></li>
 <li><a href="https://www.ansible.com/community">Ansible</a> (Tested on version 2.11+, versions back to 2.9 should work.)</li>
 </ol>
-<h4 id="installing-git-openssl-and-ansible-on-ubuntudebian">Installing Git, OpenSSL, and Ansible on Ubuntu/Debian<a class="headerlink" href="#installing-git-openssl-and-ansible-on-ubuntudebian" title="Permanent link">&para;</a></h4>
-<p>Git and OpenSSL are available via <code>apt</code>. <a href="https://www.ansible.com/community">Ansible</a> up to version 2.8.7.  This is done best with <code>pip</code>, the python package manager:</p>
-<pre><code class="language-bash"># Install git and openssl
-$ sudo apt-get install git
-$ sudo apt-get install openssl
-# If pip isn’t already available, run the following commands to install it
-$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-$ python get-pip.py --user
-# Install ansible
-$ pip install --user -Iv ansible
-</code></pre>
-<h4 id="installing-git-openssl-and-ansible-on-centos">Installing Git, OpenSSL and Ansible on CentOS<a class="headerlink" href="#installing-git-openssl-and-ansible-on-centos" title="Permanent link">&para;</a></h4>
-<p>Git and OpenSSL are available via <code>yum</code>. Most everything else can be installed in the same way.</p>
-<pre><code class="language-bash">$ sudo yum install git
-$ sudo yum install openssl
-# If pip isn’t already available, run the following commands to install it
-$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-$ python get-pip.py --user
-# Install ansible
-$ pip install --user -Iv ansible
-</code></pre>
 <h4 id="installing-git-and-ansible-on-macos">Installing Git and Ansible on MacOS<a class="headerlink" href="#installing-git-and-ansible-on-macos" title="Permanent link">&para;</a></h4>
-<p>OpenSSL is already pre-installed on MacOS. Git can be installed using XCode's command line tools (see below). Python and Pip can either be installed via the downloaded installer direct from the site (not shown below) or via Homebrew. For the installation of Ansible, consider using <a href="https://brew.sh/">homebrew</a> (see below).</p>
+<p>OpenSSL is already pre-installed on MacOS. Git can be installed using XCode's command line tools (see below). Python and Pip can either be installed via the downloaded installer direct from the site or via Homebrew (not shown below). Ansible is best installed using <a href="https://brew.sh/">Homebrew</a> (see below).</p>
 <pre><code class="language-bash"># Use xcode-select to install command line components, including git
 $ xcode-select --install
 # Install homebrew
@@ -3603,7 +3549,7 @@ $ cd islandora-playbook
 <p>Then, to spin up the machine:</p>
 <pre><code class="language-bash">vagrant up
 </code></pre>
-<h2 id="installing-a-remote-environment">Installing a remote environment<a class="headerlink" href="#installing-a-remote-environment" title="Permanent link">&para;</a></h2>
+<h2 id="deploying-to-a-remote-environment">Deploying to a remote environment<a class="headerlink" href="#deploying-to-a-remote-environment" title="Permanent link">&para;</a></h2>
 <p>A remote environment can be provisioned by providing SSH credentials to <code>islandora-playbook</code> and using the <code>ansible-galaxy</code> installer instead of Vagrant. Some preparation of configuration entries in the <code>inventory</code> also need to be changed to be aware of the particulars of your remote environment; this includes:</p>
 <ul>
 <li>Changing usernames and passwords to something more sensible than the default</li>
@@ -3699,7 +3645,7 @@ fedora_base_url: &quot;http://example.org:8080/fcrepo/rest/&quot;
 matomo_site_url: http://example.org
 </code></pre>
 <h4 id="hosts">hosts<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h4>
-<p>You'll need the SSH particulars for logging into your server in the hosts file.  This example is set up to login as <code>root</code> using
+<p>You'll need the SSH particulars for logging into your server in the <code>inventory/vagrant/hosts</code> file .  This example is set up to login as <code>root</code> using
 an SSH key. You'll need to get the details for logging into your remote server from your hosting provider (AWS, Digital Ocean, etc...)
 or your systems administrator if you're running the server in-house. See
 <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters">this page</a>
@@ -3759,7 +3705,7 @@ ask for help.  If you think you've stumbled across a bug in the installer, pleas
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2022</span>
       </span>
     
     
