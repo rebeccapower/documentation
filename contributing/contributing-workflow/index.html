@@ -3108,49 +3108,67 @@
 <h2 id="social-dynamics">Social Dynamics<a class="headerlink" href="#social-dynamics" title="Permanent link">&para;</a></h2>
 <p>We operate under the <a href="https://www.islandora.ca/code-of-conduct">Islandora Community Code of Conduct</a>. Some additional general observations to keep in mind when interacting with others in this workflow:</p>
 <ul>
-<li>We are all volunteers</li>
+<li>We are all volunteers<ul>
 <li>Time/attention of others is a limited resource.</li>
 <li>You cannot impose on others what to do.</li>
 <li>You should be motivated to do things by yourself.</li>
-<li>Common need is the driving force.</li>
+</ul>
+</li>
+<li>Common need is the driving force.<ul>
 <li>Friendly cooperation is how its done</li>
 <li>Your contribution should not overstrain others.</li>
 <li>Your contribution is valuable when others appreciate it.</li>
-<li>Islandora is constantly improving</li>
+</ul>
+</li>
+<li>Islandora is constantly improving<ul>
 <li>You are expected to make high quality contributions</li>
 <li>You must be able to adapt to change</li>
+</ul>
+</li>
 </ul>
 <h2 id="workflow">Workflow:<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
 <h4 id="general-guidelines">General Guidelines:<a class="headerlink" href="#general-guidelines" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Identify if a Github issue is needed:</li>
+<li>Identify if a Github issue is needed:<ul>
 <li>Minor grammar / php warning: no ticket required</li>
 <li>Feature or Fix beyond the minimal: Github Issue</li>
 <li>Unsure? Play it safe and make a Github Issue</li>
-<li>Prioritizing pull requests:</li>
+</ul>
+</li>
+<li>Prioritizing pull requests:<ul>
 <li>If there is an urgent need for the pull request to be addressed quickly, indicate the need in the pull request template or a comment.</li>
 <li>Complexity should also be taken into account when evaluating how quickly to merge a pull request. Changes that affect core modules or make extensive changes should receive more review and testing.</li>
+</ul>
+</li>
 <li>All interested parties should be satisfied before something is merged; no hard numbers. If you know who is likely to be interested, tag them. Tag the creator of the issue if possible. Make a reasonable effort.</li>
 <li>If a pull request languishes without response when one is needed, tag @Islandora/committers (or @Islandora-Devops/committers if you’re working on install code) with a reminder and/or put the issue on the agenda for the next Islandora 8 Tech Call</li>
 <li>All contributions to GitHub must be accompanied by either an Individual Contributor License or a Corporate Contributor License covering the contributor.</li>
 </ul>
 <h4 id="development-workflow">Development Workflow:<a class="headerlink" href="#development-workflow" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Create a Github Issue if none exists</li>
+<li>Create a Github Issue if none exists<ul>
 <li>Assign the issue to yourself or request it to be assigned in a comment on the issue.  Be sure to tag @Islandora/committers to bring attention to it.</li>
+</ul>
+</li>
 <li>Perform development on a ‘feature’ branch.  Give your branch a name that describes the issue or feature.  Using something like ‘issue-xxx‘ and including the issue number is always a safe bet if you don’t know what to name it. </li>
 <li>When the code is ready for review, issue a pull request on Github from your feature branch into the development branch (‘8.x-1.x’ for Drupal modules and ‘dev’ for everything else)</li>
-<li>Continuous integration checks need to be satisfied before the code can be merged</li>
+<li>Continuous integration checks need to be satisfied before the code can be merged<ul>
 <li>Coding standards checks and copy/paste mess detection must be passing before code can be merged.</li>
 <li>Automated tests are also expected to pass before code can be merged, however at times there can be extenuating circumstances preventing this. For example, sometimes there is a disconnect between running tests locally versus on the continuous integration server. If tests run locally and everyone involved in the pull request is in agreement, the check for automated tests can be ignored. But this isn’t a common occurrence.</li>
 <li>Code coverage checks are more of a guideline than a strict requirement. A reasonable effort to provide tests for contributed code is expected.  However, demanding 100% code coverage for all contributed code is unreasonable.  If tests have been provided or updated and everyone involved in the pull request is in agreement, code coverage checks can be ignored.</li>
+</ul>
+</li>
 <li>The code is reviewed and tested by the community, with all feedback and further development performed within the pull request.</li>
-<li>Once all feedback has been addressed, all applicable status checks have passed, and all interested parties are satisfied, the code can be merged by a committer</li>
+<li>Once all feedback has been addressed, all applicable status checks have passed, and all interested parties are satisfied, the code can be merged by a committer<ul>
 <li>Pull requests should not be merged by committers who have provided code in the pull request.  Pull requests should also not be merged by committers who are peers in the same organization as those who provided code.</li>
 <li>Always <a href="https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits">“Squash and Merge”</a>, please.</li>
-<li>Close the Github issue</li>
+</ul>
+</li>
+<li>Close the Github issue<ul>
 <li>If you add the keyword “fixes” or “resolves” on the same line when referencing the Github Issue in the PR description, it will auto-close the issue when the PR is merged.</li>
 <li>Otherwise, make a comment referencing the new commit and close the issue manually.</li>
+</ul>
+</li>
 </ul>
 
   
@@ -3165,7 +3183,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2022</span>
       </span>
     
     
