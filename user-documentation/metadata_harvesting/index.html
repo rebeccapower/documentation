@@ -10,22 +10,22 @@
       
       
       
-        <link rel="canonical" href="https://islandora.github.io/documentation/user-documentation/intro-to-ld-for-islandora-8/">
+        <link rel="canonical" href="https://islandora.github.io/documentation/user-documentation/metadata_harvesting/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0+insiders-4.23.4">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5">
     
     
       
-        <title>Intro to Linked Data - Islandora</title>
+        <title>Metadata harvesting - Islandora</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9e1efae6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fb3608a7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction-to-linked-data-for-islandora" class="md-skip">
+        <a href="#metadata-harvesting" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro to Linked Data
+              Metadata harvesting
             
           </span>
         </div>
@@ -1508,25 +1508,51 @@
     
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
+        
+        
+          <label class="md-nav__link" for="__nav_6_2">
+            
+  
+  <span class="md-ellipsis">
+    Describing content
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Describing content" data-md-level="2">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Describing content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../content_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Intro to Linked Data
+    Content models
     
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -1559,11 +1585,163 @@
   
   
     <li class="md-nav__item">
-      <a href="../objects_to_resource_nodes/" class="md-nav__link">
+      <a href="../linked_data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora  vs. Legacy
+    Linked data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Metadata harvesting
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Metadata harvesting
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oai-pmh" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAI-PMH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oai-dc-metadata-formatmetadata-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAI-DC Metadata Format/Metadata Mappings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-additional-metadata-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating additional metadata formats
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+        
+        
+          <label class="md-nav__link" for="__nav_6_3">
+            
+  
+  <span class="md-ellipsis">
+    Searching content
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Searching content" data-md-level="2">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Searching content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../searching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Searching
     
   </span>
   
@@ -1580,11 +1758,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-nodes/" class="md-nav__link">
+      <a href="../advanced-search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resource Nodes
+    Advanced search
     
   </span>
   
@@ -1601,11 +1779,74 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/access-control/" class="md-nav__link">
+      <a href="../faceting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Access Control
+    Faceting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+        
+        
+          <label class="md-nav__link" for="__nav_6_4">
+            
+  
+  <span class="md-ellipsis">
+    Viewing content
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Viewing content" data-md-level="2">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Viewing content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Context
     
   </span>
   
@@ -1622,11 +1863,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/accessibility/" class="md-nav__link">
+      <a href="../file_viewers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Accessibility
+    File viewers
     
   </span>
   
@@ -1636,6 +1877,69 @@
   
 
               
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iiif/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IIIF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+        
+        
+          <label class="md-nav__link" for="__nav_6_5">
+            
+  
+  <span class="md-ellipsis">
+    Handling content files
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Handling content files" data-md-level="2">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Handling content files
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1664,11 +1968,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../searching/" class="md-nav__link">
+      <a href="../flysystem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configure Search
+    Flysystem
     
   </span>
   
@@ -1685,11 +1989,74 @@
   
   
     <li class="md-nav__item">
-      <a href="../facet_on_vocabulary_reference_fields/" class="md-nav__link">
+      <a href="../uploading-large-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Add a Facet Block on Vocabulary Reference Field
+    Large files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+        
+        
+          <label class="md-nav__link" for="__nav_6_6">
+            
+  
+  <span class="md-ellipsis">
+    Administering Islandora
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Administering Islandora" data-md-level="2">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Administering Islandora
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access control
     
   </span>
   
@@ -1706,11 +2073,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-search/" class="md-nav__link">
+      <a href="../islandora_defaults_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configure Advanced Search
+    Islandora defaults
     
   </span>
   
@@ -1727,11 +2094,82 @@
   
   
     <li class="md-nav__item">
-      <a href="../context/" class="md-nav__link">
+      <a href="../jwt-authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configure Context
+    JWT authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versioning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessibility
     
   </span>
   
@@ -1774,237 +2212,6 @@
   
   <span class="md-ellipsis">
     Extending Islandora
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../file_viewers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Viewers
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../iiif/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    IIIF
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../oai/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OAI-PMH
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../islandora/rdf-mapping/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RDF Generation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../islandora/drupal-bundle-configurations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Drupal Bundle Configurations
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../technical-documentation/flysystem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Flysystem
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../usage-stats/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Usage Stats
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../versioning/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Versioning
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../technical-documentation/jwt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    JWT Authentication
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../technical-documentation/uploading-large-files/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Large files
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora Defaults
     
   </span>
   
@@ -3004,6 +3211,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oai-pmh" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAI-PMH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oai-dc-metadata-formatmetadata-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAI-DC Metadata Format/Metadata Mappings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-additional-metadata-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating additional metadata formats
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3016,88 +3258,79 @@
                 
                   
 
-  <a href="https://github.com/Islandora/documentation/edit/main/docs/user-documentation/intro-to-ld-for-islandora-8.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/Islandora/documentation/edit/main/docs/user-documentation/metadata_harvesting.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="introduction-to-linked-data-for-islandora">Introduction to Linked Data for Islandora<a class="headerlink" href="#introduction-to-linked-data-for-islandora" title="Permanent link">&para;</a></h1>
-<p>The purpose of this page is to provide a guided reading list to anyone who wants to get up to speed on the basics of linked data within the Islandora community. Those who make their way through the readings will be able to talk competently about linked data and better understand the design decisions made in Islandora. The list starts with the fundamentals of linked data (RDF, SPARQL, serializations and ontologies) and moves toward more advanced topics specific to the use cases of a Fedora 4 based digital repository system.</p>
-<h1 id="basics-of-linked-data">Basics of Linked Data<a class="headerlink" href="#basics-of-linked-data" title="Permanent link">&para;</a></h1>
-<p>This section seeks to give the reader a foundational understanding of what linked data is, why it is useful, and a very superficial understanding of how it works.</p>
+<h1 id="metadata-harvesting">Metadata harvesting<a class="headerlink" href="#metadata-harvesting" title="Permanent link">&para;</a></h1>
+<h2 id="oai-pmh">OAI-PMH<a class="headerlink" href="#oai-pmh" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://www.openarchives.org/pmh/">Open Archives Initiative Protocol for Metadata Harvesting</a>, commonly referred to as OAI-PMH, is a specification for exposing repository metadata for harvesting. OAI-PMH specifies six services which can be invoked over HTTP(s). The <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">full specification</a> details the services:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL on localhost:8000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identify</td>
+<td><a href="http://localhost:8000/oai/request?verb=Identify">http://localhost:8000/oai/request?verb=Identify</a></td>
+</tr>
+<tr>
+<td>ListMetadataFormats</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListMetadataFormats">http://localhost:8000/oai/request?verb=ListMetadataFormats</a></td>
+</tr>
+<tr>
+<td>ListSets</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListSets">http://localhost:8000/oai/request?verb=ListSets</a></td>
+</tr>
+<tr>
+<td>GetRecord</td>
+<td><a href="http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1">http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1</a></td>
+</tr>
+<tr>
+<td>ListIdentifiers</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc</a></td>
+</tr>
+<tr>
+<td>ListRecords</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc</a></td>
+</tr>
+</tbody>
+</table>
+<p>The module <a href="https://github.com/Islandora/islandora_defaults/tree/2.x/modules/islandora_oaipmh">Islandora OAI-PMH (<code>islandora_oaipmh</code>)</a> is a submodule of Islandora Defaults. It provides default configuration for the <a href="https://www.drupal.org/project/rest_oai_pmh">Drupal REST OAI-PMH module</a> so that repository content can be harvested.</p>
+<p>Enabling Islandora OAI-PMH provides:</p>
 <ul>
-<li><a href="https://www.w3.org/DesignIssues/LinkedData.html">Tim Berners-Lee’s description of Linked Data</a></li>
-<li><a href="https://www.youtube.com/watch?v=4x_xzT5eF5Q">Manu Sporny's "What is Linked Data?" YouTube Video</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Linked_data">Wikipedia article on Linked Data</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Semantic_Web">Wikipedia article on Semantic Web</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Wikipedia article on URIs</a></li>
-<li><a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">Wikipedia article on the W3C</a></li>
-<li><a href="https://www.w3.org/standards/semanticweb/data">W3C’s description of Linked Data</a></li>
-<li><a href="https://www.w3.org/TR/ld-glossary/">W3C’s Linked Data Glossary</a></li>
-<li><a href="https://www.w3.org/TR/webarch/">W3C’s Architecture of the World Wide Web</a></li>
+<li>a View ("OAI-PMH") that defines sets of objects for exposure at the oai_dc <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">endpoint</a>. By default,:<ul>
+<li>there is one set per "Collection" object containing that object's children</li>
+<li>there is one set of all Repository Item objects that are not members of any Collection, and are not themselves Collections.   </li>
+<li>disabled by default, there is a set of all Repository Item objects that are not Collections.</li>
 </ul>
-<h1 id="understanding-rdf">Understanding RDF<a class="headerlink" href="#understanding-rdf" title="Permanent link">&para;</a></h1>
-<p>This section is all about RDF, the Resource Description Framework, which defines the way linked data is structured.</p>
+</li>
+<li>Default configuration (at <code>/admin/config/services/rest/oai-pmh</code>) to connect this view with the REST OAI-PMH module.</li>
+<li>the ability to define additional sets by building additional views. Additional sets can be created by making views with the Entity Reference view display mode and enabling them on the REST OAI-PMH configuration page: /admin/config/services/rest/oai-pmh.</li>
+</ul>
+<p>The REST OAI-PMH module indexes (caches) set membership, so new Items may not appear immediately in their respective sets. Indexing will happen automatically during cron runs but can be triggered manually at <code>/admin/config/services/rest/oai-pmh/queue</code>.</p>
+<h2 id="oai-dc-metadata-formatmetadata-mappings">OAI-DC Metadata Format/Metadata Mappings<a class="headerlink" href="#oai-dc-metadata-formatmetadata-mappings" title="Permanent link">&para;</a></h2>
+<p>The OAI-PMH module makes use of one of two modules to provide metadata mappings: the RDF module or the Metatag module. By configuring OAI-PMH to use the RDF module (appears as "OAI Dublin Core (RDF Mapping)" and is enabled by default with Islandora OAI-PMH), the OAI-PMH module will use the RDF mapping as configured for your content type (the same mapping that is used for Fedora and Blazegraph, e.g. rdf.mapping.node.islandora_object.yml). </p>
+<p>However,</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">Wikipedia article on RDF</a></li>
-<li><a href="http://www.dlib.org/dlib/may98/miller/05miller.html">D-Lib’s Intro to RDF</a></li>
-<li><a href="https://www.w3.org/TR/rdf11-primer/">W3C’s RDF 1.1 Primer</a></li>
-<li><a href="https://www.w3.org/TR/rdf11-concepts/">W3C’s RDF 1.1 Concepts</a></li>
+<li>any field mappings that are not part of the Dublin Core namespace will be filtered out.</li>
+<li>any field mappings using Dublin Core Terms (e.g. http://purl.org/dc/terms/extent) will be mapped to their Dublin Core Elements equivalents (e.g. http://purl.org/dc/elements/1.1/format)</li>
+<li>the ability to vary the mappings in Linked Agent fields by relationship, used in JSON-LD mappings to Blazegraph and Fedora, is not available. If you want to expose data in a Linked Agent field to OAI-PMH, you must provide a DC mapping for that field in the RDF mapping. By default, the Repository Item RDF mapping does not include a mapping for the Linked Agent field.  </li>
 </ul>
-<h1 id="querying-linked-data-with-sparql">Querying Linked Data with SPARQL<a class="headerlink" href="#querying-linked-data-with-sparql" title="Permanent link">&para;</a></h1>
-<p>This section takes a look at SPARQL, the query language that allows you to ask linked data very specific questions. The queryable nature of linked data is one of the things that makes it so special. Try some SPARQL queries on DBpedia's endpoint to get some hands-on experience.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/SPARQL">Wikipedia article on SPARQL</a></li>
-<li><a href="https://www.w3.org/TR/sparql11-overview/">W3C’s SPARQL 1.1 Overview</a></li>
-<li><a href="https://www.w3.org/TR/sparql11-query/">W3C’s SPARQL 1.1 Query Language</a></li>
-<li><a href="https://dbpedia.org/sparql">DBpedia's SPARQL Endpoint</a></li>
-</ul>
-<h1 id="rdf-serialization-formats">RDF Serialization Formats<a class="headerlink" href="#rdf-serialization-formats" title="Permanent link">&para;</a></h1>
-<p>RDF data can be translated into many different formats. RDF/XML is the original way that RDF data was shared, but there are much more human-friendly serialization formats like Turtle which is great for beginners. JSON-LD is the easiest format for applications to use, and is the serialization format that Islandora uses internally. Make sure to check out the <a href="http://json-ld.org/playground/">JSON-LD Playground</a> for an interactive learning experience.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Serialization">Wikipedia article on Serialization</a></li>
-<li><a href="https://www.w3.org/TR/REC-rdf-syntax/">W3C’s RDF/XML Syntax Specification</a></li>
-<li><a href="https://www.w3.org/TR/turtle/">W3C’s RDF 1.1 Turtle</a></li>
-<li><a href="https://www.w3.org/TR/json-ld/">W3C’s JSON-LD 1.0</a></li>
-<li><a href="http://json-ld.org/">JSON-LD Website</a></li>
-<li><a href="http://json-ld.org/playground/">JSON-LD Playground</a></li>
-</ul>
-<h1 id="ontology-vocabulary-basics">Ontology &amp; Vocabulary Basics<a class="headerlink" href="#ontology-vocabulary-basics" title="Permanent link">&para;</a></h1>
-<p>Ontologies &amp; vocabularies are created by communities of people to describe things, and once created, anyone can use an ontology or vocabulary to describe their resources. This section goes over some of the more popular ontologies &amp; vocabularies in use.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">Wikipedia article on Ontologies</a></li>
-<li><a href="https://www.w3.org/standards/semanticweb/ontology">W3C’s description of Ontologies/Vocabularies (sameish thing)</a></li>
-<li><a href="https://en.wikipedia.org/wiki/FOAF_(ontology)">Wikipedia article on Friend of a Friend (FOAF) ontology</a></li>
-<li><a href="http://xmlns.com/foaf/spec/">FOAF 0.99 Vocabulary Specification</a></li>
-<li><a href="http://sioc-project.org/">Socially Interconnected Online Communities Ontology (SIOC)</a></li>
-<li><a href="http://dublincore.org/documents/dc-rdf/">Dublin Core in RDF</a></li>
-</ul>
-<h1 id="building-ontologies">Building Ontologies<a class="headerlink" href="#building-ontologies" title="Permanent link">&para;</a></h1>
-<p>One isn't limited to the ontologies &amp; vocabularies that already exist in the world, anyone is free to create their own. This section goes over ontologies that exist to help those trying to create their own ontologies.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/RDF_Schema">Wikipedia article on RDF Schema (RDFS)</a></li>
-<li><a href="https://www.w3.org/TR/rdf-schema/">W3C’s RDF Schema (RDFS) 1.1</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">Wikipedia article on Simple Knowledge Organization System (SKOS)</a></li>
-<li><a href="http://www.ala.org/alcts/resources/z687/skos">ALA’s SKOS: A Guide for Information Professionals</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Web_Ontology_Language">Wikipedia article on Web Ontology Language (OWL)</a></li>
-<li><a href="https://www.w3.org/TR/owl2-primer/">W3C’s OWL 2 Primer</a></li>
-<li><a href="https://www.w3.org/TR/owl2-quick-reference/">W3C’s OWL 2 Quick Reference</a></li>
-</ul>
-<h1 id="repository-specific-ontologies">Repository-Specific Ontologies<a class="headerlink" href="#repository-specific-ontologies" title="Permanent link">&para;</a></h1>
-<p>Most ontologies are very specific to certain use cases, and digital repository systems are no different. This section covers ontologies that are of specific interest to users of Islandora, or any Fedora 4 based digital repository system.</p>
-<ul>
-<li><a href="http://www.loc.gov/standards/mods/modsrdf/v1/">MODS RDF Namespace Document</a></li>
-<li><a href="https://www.loc.gov/standards/mods/modsrdf/primer.html">MODS RDF Ontology Primer</a></li>
-<li><a href="https://www.loc.gov/standards/mods/modsrdf/primer-2.html">MODS RDF Ontology Primer 2: MODS XML to RDF Conversion</a></li>
-<li><a href="http://id.loc.gov/ontologies/premis.html">PREMIS RDF Namespace Document</a></li>
-<li><a href="https://www.w3.org/TR/ldp-primer/">Linked Data Platform (LDP) 1.0 Primer</a></li>
-<li><a href="https://www.w3.org/TR/ldp/">LDP 1.0 Specification</a></li>
-<li><a href="https://github.com/duraspace/pcdm/wiki">Portland Common Data Model (PCDM) wiki)</a></li>
-<li><a href="http://pcdm.org/">PCDM ontologies list</a></li>
-<li><a href="http://pcdm.org/2016/04/18/models">PCDM Models ontology (defines Collections, Objects &amp; Files)</a></li>
-<li><a href="http://fedora.info/">Fedora ontologies</a></li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">Field values not showing up in OAI-DC record?</p>
+<p>If you want the value of a field to be emitted in the OAI-DC record, you must assign a Dublin Core predicate for that field in your content type's RDF mapping. If you are wondering why a field is not showing up in the OAI-DC record, the content type's RDF mapping is the first thing to check.</p>
+</div>
+<p>The REST OAI-PMH module does not support metadata formats other than OAI-DC, but it supports some alternate methods of defining mappings to OAI-DC. Consult <a href="https://www.drupal.org/project/rest_oai_pmh">that module's documentation</a> for more information.</p>
+<h2 id="creating-additional-metadata-formats">Creating additional metadata formats<a class="headerlink" href="#creating-additional-metadata-formats" title="Permanent link">&para;</a></h2>
+<p>This involves creating a new plugin.</p>
+<p>The <a href="https://git.drupalcode.org/project/rest_oai_pmh/-/blob/2.0.x/src/Plugin/OaiMetadataMap/DefaultMap.php">Drupal rest_oai_pmh module's DefaultMap plugin</a> provides a basic model to follow for creating a plugin.</p>
+<p>Exact implementation of your plugin will depend on your data model. The rest_oai_pmh module by default expects a flat list of fields and field values to output. This means that if your data model uses anything like Typed Relation field types, Paragraphs, or other complex nested entity modeling, you will need to add custom logic to build the values to emit via OAI-PMH for those fields.</p>
 
   
     
@@ -3111,7 +3344,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 23, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
       </span>
     
     
@@ -3128,7 +3361,7 @@
             </div>
           
           
-<script>var input,hash=location.hash.slice(1);hash.startsWith("__tabbed_")&&((input=document.getElementById(hash)).checked=!0)</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -3139,7 +3372,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../user-intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+        <a href="../linked_data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linked data" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3148,20 +3381,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Introduction
+              Linked data
             </div>
           </div>
         </a>
       
       
         
-        <a href="../metadata/" class="md-footer__link md-footer__link--next" aria-label="Next: Metadata" rel="next">
+        <a href="../searching/" class="md-footer__link md-footer__link--next" aria-label="Next: Searching" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Metadata
+              Searching
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3212,7 +3445,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ac3bc377.min.js"></script>
+      <script src="../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
       
     
   </body>
