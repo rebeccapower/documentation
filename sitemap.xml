@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://islandora.github.io/documentation/concepts/starter-site/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://islandora.github.io/documentation/contributing/CONTRIBUTING/</loc>
          <lastmod>2022-10-14</lastmod>
          <changefreq>daily</changefreq>
@@ -417,11 +422,6 @@
     </url>
     <url>
          <loc>https://islandora.github.io/documentation/user-documentation/iiif/</loc>
-         <lastmod>2022-10-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://islandora.github.io/documentation/user-documentation/islandora_defaults_reference/</loc>
          <lastmod>2022-10-14</lastmod>
          <changefreq>daily</changefreq>
     </url>

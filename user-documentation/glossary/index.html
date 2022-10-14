@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alpaca" class="md-skip">
+        <a href="#glossary" class="md-skip">
           Skip to content
         </a>
       
@@ -343,6 +343,28 @@
   
   <span class="md-ellipsis">
     RDF Repository
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
     
   </span>
   
@@ -2072,28 +2094,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jwt-authentication/" class="md-nav__link">
         
   
@@ -3228,6 +3228,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -3259,6 +3261,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -3550,6 +3554,24 @@
   <a href="#islandora-8-8x-20" class="md-nav__link">
     <span class="md-ellipsis">
       Islandora 8 (8.x, 2.0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islandora-install-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Islandora Install Profile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islandora-starter-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Islandora Starter Site
     </span>
   </a>
   
@@ -3868,6 +3890,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4158,6 +4182,24 @@
   <a href="#islandora-8-8x-20" class="md-nav__link">
     <span class="md-ellipsis">
       Islandora 8 (8.x, 2.0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islandora-install-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Islandora Install Profile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islandora-starter-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Islandora Starter Site
     </span>
   </a>
   
@@ -4471,8 +4513,7 @@
   </a>
 
 
-  <h1>Glossary</h1>
-
+<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <p>The following glossary of terms addresses an Islandora context. When comparing new Islandora and Fedora to older versions it may also be helpful to reference <a href="https://wiki.duraspace.org/display/ISLANDORA/APPENDIX+E+-+Glossary">the Islandora 7 Glossary</a>.</p>
 <h2 id="alpaca">Alpaca<a class="headerlink" href="#alpaca" title="Permanent link">&para;</a></h2>
 <p>Event-driven middleware based on <a href="http://camel.apache.org/">Apache Camel</a> that handles communication between various components of Islandora, for instance synchronizing <a href="#drupal">Drupal</a> data with a <a href="#fedora-repository-software">Fedora</a> repository and the <a href="#blazegraph">Blazegraph</a> triple store.</p>
@@ -4497,11 +4538,11 @@
 <p><a href="#drupal">Drupal's</a> websites are made up of two types of entities: content entities and configuration (config) entities. Content entities include <a href="#node">Nodes</a>, <a href="#media">Media</a>, <a href="#taxonomy-term">Taxonomy terms</a>, users, comments, and files. Configuration entities include all stored settings, for instance <a href="#view">Views</a>, custom blocks, menus, or roles.</p>
 <p>Content entities are grouped into distinct <a href="#content-type">content entity types</a>, which play a specific functional role in a website application built with <a href="#drupal">Drupal</a>. Most 'things' in a <a href="#drupal">Drupal</a> website are content entities. These include web content (<a href="#node">Nodes</a>, which can have subtypes like article, basic page, repository item, etc.), as well as users, comments, files, and <a href="#taxonomy-term">Taxonomy terms</a>.</p>
 <p>Each type of Content entity has a different set of behaviors. The interactions of these behaviors creates the site’s functionality. For example, a User may log into a site with a username and password that is stored as part of the content entity. If Users have the relevant permissions, they can write a blog post (a subtype of the <a href="#node">Node</a> content entity type, with a specific data structure and behavior), and assign some tags (<a href="#taxonomy-term">Taxonomy terms</a>) to the blog post.</p>
-<p><a href="#drupal">Drupal</a> comes with several <a href="#content-type">content entity types</a> preconfigured. <a href="#drupal">Drupal</a>'s default configuration includes the Basic Page and (blog) Article content types, as well as Audio, Image and Video Media types. <em>Islandora Defaults</em> adds the Repository Item <a href="#content-type">content type</a>, alters the existing <a href="#media">Media</a> types to store files in <a href="#fedora-repository-software">Fedora</a>, and introduces the Extracted Text and FITS Media types.</p>
+<p><a href="#drupal">Drupal</a> comes with several <a href="#content-type">content entity types</a> preconfigured. <a href="#drupal">Drupal</a>'s default configuration includes the Basic Page and (blog) Article content types, as well as Audio, Image and Video Media types. <em>Islandora Starter Site</em> adds the Repository Item <a href="#content-type">content type</a>, alters the existing <a href="#media">Media</a> types to store files in <a href="#fedora-repository-software">Fedora</a>, and introduces the Extracted Text and FITS Media types.</p>
 <h2 id="content-model">Content model<a class="headerlink" href="#content-model" title="Permanent link">&para;</a></h2>
 <p>Deprecated concept used in Islandora Legacy; see <a href="#islandora-model">Islandora Model</a>.</p>
 <h2 id="content-type">Content type<a class="headerlink" href="#content-type" title="Permanent link">&para;</a></h2>
-<p>A general type of Node in <a href="#drupal">Drupal</a>. A content type defines a set of data <a href="#field">fields</a> and how they are displayed. Content types are subtypes of <a href="#node">Nodes</a>, one of the <a href="#drupal">Drupal</a> <a href="#content-entity">Content entities</a>. The default <a href="#drupal">Drupal</a> Content types are 'Article' and 'Basic page'. <em>Islandora Defaults</em> adds 'Repository Item' as a Content type, defining metadata fields typically used to describe digital resources.</p>
+<p>A general type of Node in <a href="#drupal">Drupal</a>. A content type defines a set of data <a href="#field">fields</a> and how they are displayed. Content types are subtypes of <a href="#node">Nodes</a>, one of the <a href="#drupal">Drupal</a> <a href="#content-entity">Content entities</a>. The default <a href="#drupal">Drupal</a> Content types are 'Article' and 'Basic page'. <em>Islandora Starter Site</em> adds 'Repository Item' as a Content type, defining metadata fields typically used to describe digital resources.</p>
 <h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
 <p>An "if-this-then-that" configuration created using the Drupal <a href="https://www.drupal.org/project/context">Context</a> contrib module. Islandora extends the capabilities of Context by adding custom Conditions, custom Reactions, and by evaluating context at specific times to allow Contexts to be used for derivatives, indexing, and display.</p>
 <h2 id="crayfish">Crayfish<a class="headerlink" href="#crayfish" title="Permanent link">&para;</a></h2>
@@ -4511,7 +4552,7 @@
 <h2 id="derivative">Derivative<a class="headerlink" href="#derivative" title="Permanent link">&para;</a></h2>
 <p>A version of a file which is derived from an uploaded file. For example, a thumbnail generated from an uploaded image. Islandora uses <a href="#microservice">microservices</a> to generate derivatives. See the concept page for <a href="../../concepts/derivatives/">Derivatives</a>.</p>
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.docker.com/">Docker</a> is a platform that use OS-level virtualization to deliver software in packages called containers. Islandora uses Docker as part of <a href="#isle">ISLE</a>, a suite of Docker containers that run the various components of Islandora required by Islandora Defaults.</p>
+<p><a href="https://www.docker.com/">Docker</a> is a platform that use OS-level virtualization to deliver software in packages called containers. Islandora uses Docker as part of <a href="#isle">ISLE</a>, a suite of Docker containers that run the various components of Islandora required by the Islandora Install Profile.</p>
 <h2 id="drupal">Drupal<a class="headerlink" href="#drupal" title="Permanent link">&para;</a></h2>
 <p>Drupal is an open source web content management system (CMS) written in PHP. Known for being extremely flexible and extensible, Drupal is supported by a community of over 630,000 users and developers. Drupal sites can be customized and themed in a wide variety of ways.</p>
 <h2 id="drupal-core">Drupal Core<a class="headerlink" href="#drupal-core" title="Permanent link">&para;</a></h2>
@@ -4542,6 +4583,10 @@
 <p>In the context of digital repositories, ingest refers to the process by which the repository software imports and subsequently processes an object, creating derivatives automatically, and running any other processing that is configured to occur when an object is added. This would be distinguished by software which simply stores objects after import (with or without associated files) and performs no processing. The Islandora GUI and the documentation sometimes use other terms such as 'import' or 'add resource node'. In such contexts, these terms generally refer to the ingest process.</p>
 <h2 id="islandora-8-8x-20">Islandora 8 (8.x, 2.0)<a class="headerlink" href="#islandora-8-8x-20" title="Permanent link">&para;</a></h2>
 <p>Islandora 8, 8.x, 2.0, and CLAW are all deprecated names for the current version of Islandora. They referred to Islandora's use of Drupal 8, and being a major shift away from Islandora Legacy (formerly known as Islandora 7 or 7.x as it runs on Drupal 7).</p>
+<h2 id="islandora-install-profile">Islandora Install Profile<a class="headerlink" href="#islandora-install-profile" title="Permanent link">&para;</a></h2>
+<p>The Islandora Install Profile (in GitHub as <a href="https://github.com/Islandora-Devops/islandora_install_profile_demo">Islandora Install Profile Demo</a>, is a Drupal install profile that was developed by Born Digital, an Islandora vendor. It defines an Islandora with additional modules, themes, and configurations that were not defined in the Islandora Starter Site (formerly Islandora Defaults). The Install Profile and the Starter Site share the same function (though they approach it differently) and it is not possible to use both.</p>
+<h2 id="islandora-starter-site">Islandora Starter Site<a class="headerlink" href="#islandora-starter-site" title="Permanent link">&para;</a></h2>
+<p>The Islandora Starter Site is a way to install Drupal that provides a functional Islandora "out of the box." It was created from Islandora Defaults [now defunct] by discoverygarden inc, an Islandora vendor. The <a href="#islandora-install-profile">Islandora Install Profile</a> and the Starter Site share the same function (though they approach it differently) and it is not possible to use both.</p>
 <h2 id="islandora-model">Islandora model<a class="headerlink" href="#islandora-model" title="Permanent link">&para;</a></h2>
 <h2 id="islandora-playbook">Islandora playbook<a class="headerlink" href="#islandora-playbook" title="Permanent link">&para;</a></h2>
 <p>A set of human-readable <a href="#yaml">YAML</a> files, containing instructions for automatically configuring a server environment and installing the different components of the Islandora software stack. The instructions recorded in Playbook are executed by <a href="#ansible">Ansible</a>. The Islandora Playbook for Ansible is one of the installation methods currently supported by the Islandora community.</p>
@@ -4624,7 +4669,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

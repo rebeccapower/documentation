@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2169,28 +2191,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jwt-authentication/" class="md-nav__link">
         
   
@@ -3452,13 +3452,13 @@
   ],
 ];
 </code></pre>
-<p>The configuration array's top-level key is the name of the Drupal stream wrapper, which also serves as the filesystem prefix. Any Drupal file path using "fedora://" will use this Flysystem adapter. Drupal will translate this prefix to the site's domain plus "_flystem/fedora/". For example, using the default configuration provided by the islandora-playbook, a file stored at "fedora://test.tif" will persist to Fedora with the URI "http://localhost:8080/fcrepo/rest/test.tif" and will be accessible from the Drupal URL "http://localhost:8000/_flysystem/fedora/test.tif". The 'driver' value 'fedora' corresponds to <a href="https://github.com/Islandora/islandora/blob/8.x-1.x/src/Flysystem/Fedora.php#L21">the plugin's machine name</a>. The 'config' section contains all the adapter-specific configurations. In this case, the only thing configured for the site is the Fedora REST end-point. (Change this value to match your own Fedora's location, if needed.) The JWT is configured separately.</p>
-<p>Other examples of Drupal Flysystem configurations can be seen in <a href="http://cgit.drupalcode.org/flysystem/plain/README.md?h=8.x-1.x">the module's README</a>.</p>
+<p>The configuration array's top-level key is the name of the Drupal stream wrapper, which also serves as the filesystem prefix. Any Drupal file path using "fedora://" will use this Flysystem adapter. Drupal will translate this prefix to the site's domain plus "_flystem/fedora/". For example, using the default configuration provided by the islandora-playbook, a file stored at "fedora://test.tif" will persist to Fedora with the URI <code>http://localhost:8080/fcrepo/rest/test.tif</code> and will be accessible from the Drupal URL <code>http://localhost:8000/_flysystem/fedora/test.tif</code>. The <code>driver</code> value <code>fedora</code> corresponds to <a href="https://github.com/Islandora/islandora/blob/2.x/src/Flysystem/Fedora.php#L25">the plugin's machine name</a>. The <code>config</code> section contains all the adapter-specific configurations. In this case, the only thing configured for the site is the Fedora REST end-point. (Change this value to match your own Fedora's location, if needed.) The JWT is configured separately.</p>
+<p>Other examples of Drupal Flysystem configurations can be seen in <a href="https://git.drupalcode.org/project/flysystem/">the module's README</a>.</p>
 <p>Islandora is configured to have all Media use the Fedora file system by default in the islandora_core_feature. For example, the <a href="https://github.com/Islandora/islandora/blob/2.x/modules/islandora_core_feature/config/install/field.storage.media.field_media_image.yml#L17">field storage uri_scheme setting for field_media_image</a> (and the other media types) is "fedora". This can also be viewed in the UI on the field's "Field settings" page; e.g. <code>http://localhost:8000/admin/structure/media/manage/image/fields/media.image.field_media_image/storage</code>, look for "Upload destination" and see that "Flysystem: fedora" is selected.</p>
 <p>However, there are methods for saving files that can explicitly set a different filesystem than the default. Migrations can explicitly set which file system a file is saved to and Islandora can emit events that also specify which file system a derivative should be saved to.</p>
 <h3 id="derivatives">Derivatives<a class="headerlink" href="#derivatives" title="Permanent link">&para;</a></h3>
 <p>As hinted in the previous section, Islandora, by default saves derivatives to the Drupal public file system.</p>
-<p>For example, if I upload a TIFF to a repository item as a File Media with the term "Original File", the "Image Original File" (<a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/context.context.image_original_file.yml">image_original_file</a>) Context is triggered. This fires the <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/system.action.image_generate_a_service_file_from_an_original_file.yml">'image_generate_a_service_file_from_an_original_file' action</a> which emits an event using the <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/system.action.image_generate_a_service_file_from_an_original_file.yml#L17">'public' scheme (file system)</a>.</p>
+<p>For example, if I upload a TIFF to a repository item as a File Media with the term "Original File", the "Image Original File" (<a href="https://github.com/Islandora/islandora-starter-site/blob/main/config/sync/context.context.image_original_file.yml">image_original_file</a>) Context is triggered. This fires the <a href="https://github.com/Islandora/islandora-starter-site/blob/main/config/sync/system.action.image_generate_a_service_file_from_an_original_file.yml">'image_generate_a_service_file_from_an_original_file' action</a> which emits an event using the <a href="https://github.com/Islandora/islandora-starter-site/blob/main/config/sync/system.action.image_generate_a_service_file_from_an_original_file.yml#L20">'public' scheme (file system)</a>.</p>
 <p>To make Islandora save future derivatives to Fedora instead of to Drupal, change the corresponding action's "File system" setting ('scheme' in the corresponding config file) to 'fedora' instead of 'public'.</p>
 <p><img alt="Screenshot showing the setting to change for the derivative generation action." src="../../assets/flysystem_derivative_filesystem_setting.png" /></p>
 
@@ -3474,7 +3474,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

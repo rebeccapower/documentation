@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2194,28 +2216,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jwt-authentication/" class="md-nav__link">
         
   
@@ -3490,11 +3490,11 @@
 <p>Islandora forms are Drupal forms, and for help working with forms via the API, please check out the <em>Further Reading</em> section for links to more advanced Drupal documentation.</p>
 <h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The following How-To assumes that you are using the (optional) <strong><a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults</a></strong> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="https://www.islandora.ca/get-islandora">Ansible Playbook</a>, <a href="https://www.islandora.ca/get-islandora">ISLE with Docker-Compose</a>, or are using the <a href="https://www.islandora.ca/get-islandora">sandbox or a Virtual Machine Image</a></li>
+<li>The following How-To assumes that you are using the (optional) <strong><a href="https://github.com/Islandora/islandora-starter-site">Islandora Starter Site</a></strong> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="https://www.islandora.ca/get-islandora">Ansible Playbook</a>, <a href="https://www.islandora.ca/get-islandora">ISLE with Docker-Compose</a>, or are using the <a href="https://www.islandora.ca/get-islandora">sandbox or a Virtual Machine Image</a></li>
 <li>This How-To assumes familiarity with Drupal terms such as <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Node</a>, <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/working-with-content-types-and-fields-drupal-7-and-later">Content Type</a>, and <a href="https://www.drupal.org/docs/8/core/modules/media">Media</a>.</li>
 </ul>
 <h2 id="how-to-modify-a-content-type">How to modify a Content Type<a class="headerlink" href="#how-to-modify-a-content-type" title="Permanent link">&para;</a></h2>
-<p>If you have deployed your Islandora with the Islandora Defaults configuration, you will already have a Repository Item content type available, with pre-configured fields and repository behaviours.</p>
+<p>If you have deployed your Islandora with the Islandora Starter Site configuration, you will already have a Repository Item content type available, with pre-configured fields and repository behaviours.</p>
 <ol>
 <li>In the Admin menu, go to <strong>Structure</strong> &gt;&gt; <strong>Content Types</strong> and find the <em>Repository Item</em> content type.</li>
 <li>Select <em>Manage Fields</em>.</li>
@@ -3565,7 +3565,7 @@
 </ol>
 <h2 id="create-a-content-type">Create a Content Type<a class="headerlink" href="#create-a-content-type" title="Permanent link">&para;</a></h2>
 <p>To create your own custom content type from scratch, please refer to <a href="https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content-0/create-a-custom-content-type">this guide</a> on Drupal.org.</p>
-<p>Custom content types are not synced to Fedora or indexed by the triple-store by default. Repository managers must add them to a context that instructs Drupal to perform these synchronizations. In Islandora Defaults, the "Content" ('repository_content') context does this. To add a new content type to that context:</p>
+<p>Custom content types are not synced to Fedora or indexed by the triple-store by default. Repository managers must add them to a context that instructs Drupal to perform these synchronizations. In the Islandora Starter Site, the "Content" ('repository_content') context does this. To add a new content type to that context:</p>
 <ol>
 <li>Navigate to the <em>Contexts</em> configuration page ('/admin/structure/context').</li>
 <li>Find the <em>Content</em> context and click the corresponding <strong>Edit</strong> button ('/admin/structure/context/repository_content').</li>
@@ -3575,9 +3575,9 @@
 </ol>
 <p>Updating contexts does not retroactively fire any actions. Any of the custom content type's nodes that were created before updating the context will need to have the indexing action manually triggered.</p>
 <h2 id="updating-and-creating-an-rdf-mapping">Updating and creating an RDF Mapping<a class="headerlink" href="#updating-and-creating-an-rdf-mapping" title="Permanent link">&para;</a></h2>
-<p>RDF mapping aligns Drupal fields with RDF ontology properties. For example, the title field of a content model can be mapped to <code>dcterms:title</code> and/or <code>schema:title</code>. In Islandora, triples expressed by these mappings get synced to Fedora and indexed in the Blazegraph triplestore. RDF mappings are defined/stored in Drupal as a <a href="https://yaml.org/">YAML</a> file (to learn more about YAML, there are <a href="https://duckduckgo.com/?q=yaml+tutorial">several tutorials on the web</a>. Currently, Drupal 8 does not have a UI to create/update RDF mappings to ontologies other than Schema.org. This requires repository managers to update the configuration files themselves. Consider using the RDF mappings included in <a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> as templates by copying and modifying one to meet your needs.</p>
+<p>RDF mapping aligns Drupal fields with RDF ontology properties. For example, the title field of a content model can be mapped to <code>dcterms:title</code> and/or <code>schema:title</code>. In Islandora, triples expressed by these mappings get synced to Fedora and indexed in the Blazegraph triplestore. RDF mappings are defined/stored in Drupal as a <a href="https://yaml.org/">YAML</a> file (to learn more about YAML, there are <a href="https://duckduckgo.com/?q=yaml+tutorial">several tutorials on the web</a>. Currently, Drupal 8 does not have a UI to create/update RDF mappings to ontologies other than Schema.org. This requires repository managers to update the configuration files themselves. Consider using the RDF mappings included in the <a href="https://github.com/Islandora/islandora-starter-site">Islandora Starter Site</a> as templates by copying and modifying one to meet your needs.</p>
 <p>The Drupal 8 Configuration Synchronization export (e.g. <code>http://localhost:8000/admin/config/development/configuration/single/export</code>) and import (e.g. <code>http://localhost:8000/admin/config/development/configuration/single/import</code>) can be used to get a copy of the mappings for editing in a text editor before being uploaded again. Alternatively, a repository manager can update the configuration on the server and use <a href="https://www.drupal.org/project/features">Features</a> to import the edits.</p>
-<p>An RDF mapping configuration file has two main areas: the mapping's metadata and the mapping itself. Most of the mapping's metadata should be left alone unless you are creating a brand-new mapping for a new Content Type or Taxonomy Vocabulary. A <em>partial</em> example from <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/rdf.mapping.node.islandora_object.yml">islandora_default's islandora_object (Repository Item)</a> is included below:</p>
+<p>An RDF mapping configuration file has two main areas: the mapping's metadata and the mapping itself. Most of the mapping's metadata should be left alone unless you are creating a brand-new mapping for a new Content Type or Taxonomy Vocabulary. A <em>partial</em> example from <a href="https://github.com/Islandora/islandora-starter-site/blob/main/config/sync/rdf.mapping.node.islandora_object.yml">islandora_default's islandora_object (Repository Item)</a> is included below:</p>
 <pre><code>langcode: en
 status: true
 dependencies:
@@ -3611,7 +3611,7 @@ fieldMappings:
 </code></pre>
 <p>The required mapping metadata fields when creating a brand-new mapping include the <code>id</code>, <code>status</code>, <code>targetEntityType</code>, and <code>bundle</code>. (<code>uuid</code> and <code>_core</code>, not seen in the example above but may be present in exported copies,  will be added by Drupal automatically.) <code>bundle</code> is the machine name for the Content Type or Taxonomy Vocabulary you are creating the mapping for. <code>targetEntityType</code> is <code>node</code> for Content Types or <code>taxonomy_term</code> for Taxonomy Vocabularies. The <code>id</code> configuration is a concatenation of target entity type and bundle ('node' and 'islandora_object' in the example above). The <code>id</code> is also used to name the configuration file: e.g. <code>rdf.mapping.node.islandora_object.yml</code> is <code>rdf.mapping.</code> plus the id (<code>node.islandora_object</code>) and then <code>.yml</code>.</p>
 <p>The mapping itself consists of the <code>types</code>' and <code>fieldMappings</code> configurations.</p>
-<p>All the mappings use RDF namespaces instead of fully-qualified URIs. For example, the type for islandora_object is <code>pcdm:Object</code> instead of <code>http://pcdm.org/models#Object</code>. Unfortunately, the available namespaces are defined in module hooks (hook_rdf_namespaces) rather than in a configuration file. Repository managers wanting to add additional namespaces need to create their own module and implement hook_rdf_namespaces. See the <a href="https://github.com//Islandora/islandora_defaults/blob/8.x-1.x/islandora_defaults.module">islandora_defaults</a> hook implementation for an example.</p>
+<p>All the mappings use RDF namespaces instead of fully-qualified URIs. For example, the type for islandora_object is entered in the RDF config as <code>pcdm:Object</code> instead of <code>http://pcdm.org/models#Object</code>. The available namespaces are defined in module hooks (hook_rdf_namespaces) but can also be entered manually in a configuration interface. Repository managers wanting to add additional namespaces need to go to Configuration &gt; Search and Metadata &gt; JSONLD and enter their desired namespaces in the "Additional RDF Namespaces" box.</p>
 <p>Namespaces currently supported (ordered by the module that supplies them) include:</p>
 <ul>
 <li>rdf<ul>
@@ -3642,7 +3642,7 @@ fieldMappings:
 <li>iana: http://www.iana.org/assignments/relation/</li>
 </ul>
 </li>
-<li>islandora_demo<ul>
+<li>islandora-starter-site<ul>
 <li>relators: http://id.loc.gov/vocabulary/relators/</li>
 </ul>
 </li>
@@ -3673,7 +3673,7 @@ fieldMappings:
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

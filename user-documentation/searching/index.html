@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2211,28 +2233,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jwt-authentication/" class="md-nav__link">
         
   
@@ -3553,7 +3553,7 @@
 <h2 id="indexing-edtf-dates">Indexing EDTF Dates<a class="headerlink" href="#indexing-edtf-dates" title="Permanent link">&para;</a></h2>
 <p>EDTF date fields can only be successfully indexed directly as strings. However, there is a way to include a custom "edtf year" field containing the facets-friendly year (or year ranges) from one or more EDTF fields. This must first be enabled by checking "EDTF Year" under the Processors tab, then can be added on the Field tab (it'll be called "EDTF Creation Date Year (edtf_year)"), and finally can be configured as a facet. See "How should this be tested" on <a href="https://github.com/Islandora/controlled_access_terms/pull/68">this pull request</a> for instructions on setting it up.</p>
 <h2 id="searching-islandora">Searching Islandora<a class="headerlink" href="#searching-islandora" title="Permanent link">&para;</a></h2>
-<p>Searching using Search API in Drupal is done using Drupal Views. The Islandora Defaults module comes with a search page pre-configured (accessible at '/solr-search/content'). To edit the search page, navigate to '/admin/structure/views/view/solr_search_content'.</p>
+<p>Searching using Search API in Drupal is done using Drupal Views. The Islandora Starter Site comes with a search page pre-configured (accessible at '/solr-search/content'). To edit the search page, navigate to '/admin/structure/views/view/solr_search_content'.</p>
 <p>Repository managers may want to change the URL used to access the page, add it to the site navigation, or add a search box. In the 'Page Settings' box in the middle of the page, click on the existing path to open a shadow-box with an edit field. Change the URL as desired, for example, to 'search' and click <strong>Apply</strong>. Then, click the <strong>No menu</strong> link just below it to open the menu settings shadow-box. Selecting 'Normal menu entry' will allow a repository manager to add a menu link text, description, and place it within the site menu tree (the default, <code>&lt;Main navigation&gt;</code> works for most sites). A search box can be added by expanding the <em>Advanced</em> options and changing the <em>Exposed form in block</em> setting and then use the <em>Block Layout</em> interface (found at '/admin/structure/block') to place the block where desired. After making changes to the View's settings, click the <strong>Save</strong> button to ensure the changes are not lost.</p>
 <p>Islandora's Repository Items are displayed in the search results as a fully rendered entity by default. Repository managers can choose which view mode should be used for each search datasource by clicking the <strong>Settings</strong> link next to the <em>Show:</em> setting under the <em>Format</em> section of the search view configuration page (shown in a red box in the screenshot below). The <em>Teaser</em> and <em>Search result highlighting input</em> are the two most likely options. Alternatively, repository managers can select specific fields to display instead by clicking the <strong>Rendered Entity</strong> link and changing it to <em>Fields</em> and then choosing which fields will be displayed in the <em>Fields</em> section underneath.</p>
 <div class="admonition note">
@@ -3574,7 +3574,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

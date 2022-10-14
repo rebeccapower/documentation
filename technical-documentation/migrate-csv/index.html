@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2072,28 +2094,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-documentation/islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../user-documentation/jwt-authentication/" class="md-nav__link">
         
   
@@ -3775,7 +3775,7 @@
 <li>An instance of Islandora. Use <a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora Playbook</a> to spin up an environment pre-loaded with all the modules you need (except this one)</li>
 <li>Some basic command line skills.  You won't need to know much, but you'll have to <code>vagrant ssh</code> into the box, navigate into Drupal, and use <code>git</code> and <code>drush</code>, etc...  If you can copy/paste into a terminal, you'll survive.</li>
 </ol>
-<p>A big part of this tutorial relies on the <a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> and <a href="https://github.com/Islandora/controlled_access_terms/tree/2.x/modules/controlled_access_terms_defaults">controlled_access_terms_defaults</a> features, which define the default metadata profile for Islandora (which we'll be migrating into). You're not required to use the <code>islandora_defaults</code> or <code>controlled_access_terms_defaults</code> for your repository, but for the purposes of demonstration, it saves you a lot of user interface administrivia so you can focus just on the learning how to migrate.  By the time you are done with this exercise, you'll be able to easily apply your knowledge to migrate using any custom metadata profile you can build using Drupal.</p>
+<p>The configuration referred to in this tutorial comes from the <a href="https://github.com/Islandora/islandora-starter-site/">Islandora Starter Site</a>, which defines the content model and metadata fields that we'll be migrating into. You're not required to use the Islandora Starter Site for your repository, but for the purposes of demonstration, it saves you a lot of user interface administrivia so you can focus just on the learning how to migrate.  By the time you are done with this exercise, you'll be able to easily apply your knowledge to migrate using any custom metadata profile you can build using Drupal.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The Migrate API is the main way to ingest batches of data into Drupal (and because Islandora is Drupal, into Islandora). The Migrate module only provides the framework, it's up to you to create the rules that take data from a <em>source</em>, through a <em>process</em> (i.e. a mapping) to a <em>destination</em>. A set of these rules is called a "migration". It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be run.</p>
 <p>Once a migration has been run, it will have created (or updated) a bunch of Drupal entities of one type - whether that's taxonomy terms, nodes, files, etc. Since an Object in Islandora is made up of several different Drupal entities that refer to each other, it's going to take multiple migrations to create an Islandora object, and it's important to perform these migrations in a sensible order.</p>
@@ -3789,13 +3789,15 @@
 <p>While this tutorial uses a single CSV to describe all the parts of an islandora object, a site can use multiple sources (CSV or otherwise) to migrate the various parts. The only requirements then is to have keys in place matching the parts together. For example, a 'files.csv' can use paths that serve as file identifiers and 'metadata.csv' can use an object identifier. As long as the source for the media migration has the key values for the file and metadata migrations (the file paths and object identifiers, respectively, in this example), we can create the necessary links between the object's components. This is very useful when you need to migrate multiple media/file pairs  associated with a single node, such as pre-processed derivatives that need to be migrated.</p>
 </div>
 <p>Buried in your descriptive metadata are often references to other things which aren't repository items themselves, but records still need to be kept for them.  Authors, publishers, universities, places, etc... can be modeled as Drupal Entities, so that they can be referenced by other Entities.  So there's the potential to have a lot of different entity types described in a single row in a CSV.</p>
-<p>In this tutorial, we're working with <code>islandora_defaults</code> and <code>controlled_access_terms</code> entities, and will be migrating six entity types using the three migrations included in this module.
-- file
-- node
-- media
-- subject
-- person
-- corporate_body</p>
+<p>In this tutorial, we will use the three migrations defined in this module to migrate into Drupal entities. The entities we are migrating content into have already been defined by the Islandora Starter Site:</p>
+<ul>
+<li>file</li>
+<li>node</li>
+<li>media</li>
+<li>subject</li>
+<li>person</li>
+<li>corporate_body</li>
+</ul>
 <p>We can do this because subjects, persons, and corporate bodies are (in this example) represented by simple 'name' strings. We create them on the fly, as if we were adding new tags to a tag vocabulary. If we wanted to model subjects, people, or corporate bodies as entities with multiple fields (first name, last name, date, subheadings, URI, etc.) then we would need up to six migrations.</p>
 <p>Migrations follow the <a href="https://en.wikipedia.org/wiki/Extract,_transform,_load">Extract-Transform-Load pattern</a>.  You extract the information from a source, process the data to transform it into the format you need, and load it into the destination system (i.e. Drupal).  Migrations are stored in Drupal as configuration, which means they can be represented in YAML, transferred to and from different sites, and are compatible with Drupal's configuration synchronization tools. And the structure of each YAML file is arranged to follow the Extract-Transform-Load pattern.</p>
 <p>To perform the migrations, we'll be using <code>drush</code>. We will be able to run each of the file, node, and media migrations separately or all at once in a group. We will also learn how to roll back a migration in case it didn't go as planned.</p>
@@ -4458,7 +4460,7 @@ migration_dependencies:
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

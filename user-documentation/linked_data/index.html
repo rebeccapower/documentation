@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2346,28 +2368,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jwt-authentication/" class="md-nav__link">
         
   
@@ -3883,7 +3883,7 @@
 <p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at <code>node/[nid]?_format=jsonld</code> (for nodes; for media and terms, at <code>media/[mid]?_format=jsonld</code> and <code>taxonomy/term/[tid]?_format=jsonld</code>).</p>
 <ul>
 <li>The JSON-LD module will only work with mappings that include a value under <code>types</code> (which maps to <code>rdf:type</code> - see below, under Structure of an RDF Mapping).</li>
-<li>The JSON-LD module provides a hook so other modules can alter the entity before it gets mapped. The <code>islandora</code> module uses this hook to trigger any "Map URI to Predicate" and "Alter JSON-LD Type" reactions that are configured in Contexts. <code>islandora_defaults</code> provides the two Contexts - "All Media" and "Content" - that configure these to occur on Media and Repository Item nodes.</li>
+<li>The JSON-LD module provides a hook so other modules can alter the entity before it gets mapped. The <code>islandora</code> module uses this hook to trigger any "Map URI to Predicate" and "Alter JSON-LD Type" reactions that are configured in Contexts. The Islandora Starter Site provides two Contexts - "All Media" and "Content" - that configure these to occur on Media and Repository Item nodes.</li>
 <li>The JSON-LD module adds RDF datatypes to the RDF values, and includes a mapping of Drupal field types to RDF datatypes.</li>
 <li>The JSON-LD module provides a hook to alter its Drupal field type to RDF datatype mapping.</li>
 <li>The JSON-LD module has a configuration option that can cause the <code>?_format=jsonld</code> to be part of, or not part of, the URIs of Drupal objects. On an out-of-the-box islandora-playbook, this string is stripped, but by default on a fresh install of the jsonld module, it is not.</li>
@@ -3985,10 +3985,9 @@
 }
 </code></pre>
 <h3 id="rdf-mappings">RDF mappings<a class="headerlink" href="#rdf-mappings" title="Permanent link">&para;</a></h3>
-<p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the rdf.mapping.[...].yml files located in:</p>
+<p>If using the Islandora Starter Site, the RDF mappings are set in the config files with names like rdf.mapping.[...].yml. The starter site config files will override configs set by modules. If you are building a site from scratch (not using the Islandora Starter Site, there are relevant configs in the following folders:</p>
 <ul>
 <li><code>[drupal modules directory]/islandora/modules/islandora_core_feature/config/install/</code> (media and taxonomy terms)</li>
-<li><code>[drupal modules directory]/islandora_defaults/config/install/</code> (<code>repository_item</code> and the <code>islandora_access</code> vocabulary)</li>
 <li><code>[drupal modules directory]/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code> (the default <code>corporate_body</code>, <code>family</code>, <code>geo_location</code>, <code>person</code>, <code>resource_type</code> and <code>subject</code> vocabularies)</li>
 <li><code>[drupal web root]/core/profiles/standard/config/install/</code> (articles, pages, comments, and tags).</li>
 </ul>
@@ -4004,7 +4003,7 @@
 <li>If you import a configuration that uses a namespace that is not registered, bad things will happen silently.</li>
 </ul>
 <h4 id="structure-of-an-rdf-mapping">Structure of an RDF mapping<a class="headerlink" href="#structure-of-an-rdf-mapping" title="Permanent link">&para;</a></h4>
-<p>Below is an example of an RDF mapping as a .yml (YAML) file. It is the current version of the RDF mapping of the Repository Item (<code>islandora_object</code>) bundle, provided by <code>islandora_defaults</code> and exportable as <code>rdf.mapping.node.islandora_object.yml</code>).</p>
+<p>Below is an example of an RDF mapping as a .yml (YAML) file. It is the RDF mapping (current at time of writing) of the Repository Item (<code>islandora_object</code>) bundle, provided by the Islandora Starter Site and exportable as <code>rdf.mapping.node.islandora_object.yml</code>).</p>
 <ul>
 <li>The top level key <code>types</code> specifies the <code>rdf:type</code> of the resource or content model. <code>field_model</code>, a required field of Islandora objects, also gets mapped to <code>rdf:type</code> through an arcane back-end process.</li>
 <li>The top level key <code>fieldMappings</code> specifies fields attached to that bundle and their RDF property mappings. One field can be mapped to more than one RDF property. It is a simple flat list.</li>
@@ -4033,9 +4032,6 @@ status: true
 dependencies:
   config:
     - node.type.islandora_object
-  enforced:
-    module:
-      - islandora_defaults
   module:
     - node
 id: node.islandora_object
@@ -4120,7 +4116,7 @@ fieldMappings:
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

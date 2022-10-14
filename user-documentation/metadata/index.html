@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2355,28 +2377,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jwt-authentication/" class="md-nav__link">
         
   
@@ -3815,7 +3815,7 @@
 
 <p>As described in the <a href="../content_models/#resource-nodes">resource nodes section</a>, Islandora digital objects are comprised of <em>Drupal nodes</em> for descriptive metadata, <em>Drupal media</em> for technical metadata, and <em>Drupal files</em> for the binary objects. This section describes how Islandora uses and extends Drupal fields to manage descriptive metadata.</p>
 <h2 id="content-types">Content Types<a class="headerlink" href="#content-types" title="Permanent link">&para;</a></h2>
-<p>In Drupal, Nodes come in different subtypes called <a href="../user-documentation/glossary#content-type">Content Type</a>. These let you define a type of content ("Article" and "Basic Page" are Drupal defaults and "Repository Item" is an Islandora specific example), the set of metadata fields that are attached to that content, and how those fields can be edited and displayed. Each <a href="../user-documentation/glossary#content-type">Content Type</a> is essentially a metadata profile that can be used for a piece of web content, or to describe a digital resource. You can create your own <a href="../user-documentation/glossary#content-type">Content Types</a> for your Islandora project or use a pre-defined one like Repository Item from the Islandora_defaults module. We will go over the metadata specific aspects of Content Types below, but for a fuller walk-through of creating a <a href="../user-documentation/glossary#content-type">Content Type</a> <a href="../content_types/#create-a-content-type">see here</a>.</p>
+<p>In Drupal, Nodes come in different subtypes called <a href="../user-documentation/glossary#content-type">Content Type</a>. These let you define a type of content ("Article" and "Basic Page" are Drupal defaults and "Repository Item" is an Islandora specific example), the set of metadata fields that are attached to that content, and how those fields can be edited and displayed. Each <a href="../user-documentation/glossary#content-type">Content Type</a> is essentially a metadata profile that can be used for a piece of web content, or to describe a digital resource. You can create your own <a href="../user-documentation/glossary#content-type">Content Types</a> for your Islandora project or use a pre-defined one like Repository Item from the Islandora Starter Site. We will go over the metadata specific aspects of Content Types below, but for a fuller walk-through of creating a <a href="../user-documentation/glossary#content-type">Content Type</a> <a href="../content_types/#create-a-content-type">see here</a>.</p>
 <p>Not all <a href="../user-documentation/glossary#content-type">Content Types</a> in your Drupal site need be <a href="../content_models/#resource-nodes">Islandora Resource Nodes</a>. Making a <a href="../user-documentation/glossary#content-type">Content Type</a> a Resource Node will associate Islandora specific behaviours (such as syncing to Fedora or causing derivatives to be generated) with it. The decision to make a content an Islandora resource node is left to the discretion of the site manager. In Islandora, a "resource node" is usually considered a descriptive record for "a thing", and is conceptually similar to an "Islandora Object" in 7.x, i.e. a "Fedora Object" in Fedora 3.x and below. Read more on configuring a <a href="../user-documentation/glossary#content-type">Content Type</a> to be treated as a <a href="../content_types/#create-a-content-type">Resource Node</a>.</p>
 <h3 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h3>
 <p>The administrator will define the fields that are associated with a specific <a href="../user-documentation/glossary#content-type">Content Type</a>. The same fields can be applied to different <a href="../user-documentation/glossary#content-type">Content Type</a>, but the field display and editing configurations are unique to each <a href="../user-documentation/glossary#content-type">Content Type</a>. The names and definitions of these fields are specific to Drupal and do not have to correspond to an outside metadata schema. You will give each field a Label, Machine Name, and a specific <a href="#field-types">Field Type</a>, like Text, Integer, EDTF, or Entity Reference (see below). Specific to the Field Type you will then define the maximum length of the field, the number of values it can contain, and what taxonomies it might link to.</p>
@@ -3823,14 +3823,14 @@
 <p>Certain decisions must be made when fields are created, and before any content is added, because they can not be changed later. Field Type can not be changed, so you wouldn't be able to change a text field to a taxonomy field after creation. The field's machine name also can't be changed. The number of values allowed in a field or its maximum length or type of item to reference (in the case of Entity reference fields) can not be changed after content has been added. You can, however, always add new fields to a <a href="../user-documentation/glossary#content-type">Content Type</a>, even after content has been added.</p>
 <div class="admonition islandora">
 <p class="admonition-title">7.x Migration Note: What About My MODS XML?</p>
-<p>Even when using <em>islandora_defaults</em> there is no "official" metadata schema in Islandora. Where Islandora 7.x used MODS, and took advantage of its hierarchical/extensible structure, Drupal Fields are a flat structure working with distinct, individual elements. You can base your fields on those in MODS, or any other schema, but that structure is up to you. The Metadata Interest Group has developed a sample <a href="https://docs.google.com/spreadsheets/d/18u2qFJ014IIxlVpM3JXfDEFccwBZcoFsjbBGpvL0jJI/edit?pli=1#gid=0">MODS-Drupal-RDF mapping</a>, which provides a structure upon which you can build your Drupal fields. It is used by the Repository Item <a href="../user-documentation/glossary#content-type">Content Type</a> in <em>islandora_defaults</em>.</p>
+<p>Even when using the Islandora Starter Site, there is no "official" metadata schema in Islandora. Where Islandora 7.x used MODS, and took advantage of its hierarchical/extensible structure, Drupal Fields are a flat structure working with distinct, individual elements. You can base your fields on those in MODS, or any other schema, but that structure is up to you. The Metadata Interest Group has developed a sample <a href="https://docs.google.com/spreadsheets/d/18u2qFJ014IIxlVpM3JXfDEFccwBZcoFsjbBGpvL0jJI/edit?pli=1#gid=0">MODS-Drupal-RDF mapping</a>, which provides a structure upon which you can build your Drupal fields. It is used by the Repository Item <a href="../user-documentation/glossary#content-type">Content Type</a> in the Islandora Starter Site.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">You Cannot Change The <a href="../user-documentation/glossary#content-type">Content Type</a> Of A Node</p>
 <p>Once a node is created, its <a href="../user-documentation/glossary#content-type">Content Type</a> cannot be changed. Just as you are unable to change many aspects of a Field once it has been created, once a node has been created it is now permanently of that <a href="../user-documentation/glossary#content-type">Content Type</a> and the fields associated with it. At that point your only option would be to create a new node of the intended content type, map the field values (programmatically or by copy-paste), and update any media or children that refer to the old node to refer to the new one.</p>
 </div>
-<p>The <em>islandora_defaults</em> module provides a <strong>Repository Item</strong> <a href="../user-documentation/glossary#content-type">Content Type</a> that can be used as a structure to build your collection around, or it can be used as a sample to see how fields in <a href="../user-documentation/glossary#content-type">Content Type</a> work. It pre-defines fields, including <strong>Alternative Title</strong> and <strong>Date Issued</strong> that could be of use in many digital repositories. The full list of fields and their field types can be seen in the screenshot below.</p>
-<p><img alt="Screenshot of the &quot;Manage fields&quot; page for the &quot;Repository Item&quot; Content Type from islandora_defaults." src="../../assets/metadata_content_type_screenshot.png" /></p>
+<p>The Islandora Starter Site provides a <strong>Repository Item</strong> <a href="../user-documentation/glossary#content-type">Content Type</a> that can be used as a structure to build your collection around, or it can be used as a sample to see how fields in <a href="../user-documentation/glossary#content-type">Content Type</a> work. It pre-defines fields, including <strong>Alternative Title</strong> and <strong>Date Issued</strong> that could be of use in many digital repositories. The full list of fields and their field types can be seen in the screenshot below.</p>
+<p><img alt="Screenshot of the &quot;Manage fields&quot; page for the &quot;Repository Item&quot; Content Type from Islandora Starter Site." src="../../assets/metadata_content_type_screenshot.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Titles Aren't Conventionally-Configurable Fields</p>
 <p>The field <em>title</em> is built-in to each <a href="../user-documentation/glossary#content-type">Content Type</a> by default, and can be referenced in views, templates, and indexing like other fields, but it cannot be configured like other fields. The only aspect you can change about <em>title</em> is its label. It has a built-in maximum length of 255 characters which cannot be changed. If your content requires longer titles we recommend you create a separate "long_title" field to store the full title and reserve the default title field for a display title.
@@ -3848,7 +3848,7 @@ hidden.</p>
 <p>See also: <a href="https://docs.google.com/presentation/d/1LfpU6H4qxXtnYQPFntwMNtsgtU30yzp2MxwKKAllUOc/edit?usp=sharing">MIG Presentation on Taxonomies</a> by Kristina Spurgin, 2021-07-19</p>
 <p>In Drupal, <em>Taxonomy Vocabularies</em> (or simply <em>Vocabularies</em>) are also entity subtypes that define a set of fields and their configurations. Whereas instances of content types are called <em>nodes</em>, items in a vocabulary are called <em>taxonomy terms</em> (or simply <em>terms</em>). Traditionally, taxonomy terms are used to classify content in Drupal. For instance, the Article <a href="../user-documentation/glossary#content-type">Content Type</a> includes a field <code>field_tags</code> that can refer to terms in the Tags vocabulary.</p>
 <p>There are two ways that users can interact with taxonomies: they can be "closed," e.g. a fixed list to pick from in a dropdown, or "open," e.g. <code>field_tags</code> where users can enter new terms, which are created on the fly. This is not set on the <em>vocabulary</em> itself, but in the configuration of the field (typically on a node). Terms within vocabularies have an ordering, and can have hierarchical structure, but do not need to.</p>
-<p>Islandora (through the Islandora Core Feature) creates the 'Islandora Models' vocabulary which includes the terms 'Audio', 'Binary', 'Collection', 'Compound Object', 'Digital Document', 'Image', 'Newspaper', 'Page', 'Paged Content', 'Publication Issue', and 'Video'. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>
+<p>Islandora (through the Islandora Core Feature) creates the 'Islandora Models' vocabulary which includes the terms 'Audio', 'Binary', 'Collection', 'Compound Object', 'Digital Document', 'Image', 'Newspaper', 'Page', 'Paged Content', 'Publication Issue', and 'Video'. Islandora Starter Site provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>
 <!-- Is it possible to add your own terms to this vocabulary? Is it recommended? -->
 
 <!-- field_model is a "special field" in terms of the RDF mapping, because the drupal URI gets replaced by the 'external URI' but I'm not sure if this is where to mention this.-->
@@ -3901,7 +3901,7 @@ The key is the stored value (typically an abbreviation representing the authorit
 <li>Whether to use Views for filtering</li>
 <li>Whether to allow users to create new referenced entities while inputting data, if they don't already exist</li>
 </ul>
-<p>The <em>Repository Item</em> content type, provided by the <em>islandora_defaults</em> module, includes several entity reference fields that reference vocabularies defined by the <em>islandora</em> and <em>controlled_access_terms</em> modules.</p>
+<p>The <em>Repository Item</em> content type, provided by the Islandora Starter Site, includes several entity reference fields that reference vocabularies defined by the <em>islandora</em> and <em>controlled_access_terms</em> modules.</p>
 <h4 id="configurations-for-entity-reference-field">Configurations for Entity Reference field<a class="headerlink" href="#configurations-for-entity-reference-field" title="Permanent link">&para;</a></h4>
 <p>The screenshots below show how you can configure an entity reference field (in this case the Subject field on the Repository Item content type).</p>
 <div class="admonition tip">
@@ -3958,7 +3958,7 @@ seasonal value 2019-22 as defined in the EDTF specification):
 <p>The parts of a field are called properties, so 'entity reference' and 'relation type' are properties of the Typed Relation field type.</p>
 </div>
 <h4 id="configurations-for-the-typed-relation-field">Configurations for the Typed Relation field<a class="headerlink" href="#configurations-for-the-typed-relation-field" title="Permanent link">&para;</a></h4>
-<p>The <em>islandora_defaults</em> module demonstrates a Typed Relation field labelled 'Linked Agent' as part of the Repository Item content type, and populates the available relations from the MARC relators list. <img alt="Screenshot of adding a value into a typed relation field" src="../../assets/metadata_typed_relation_field.png" /></p>
+<p>The Islandora Starter Site includes a Typed Relation field labelled 'Linked Agent' as part of the Repository Item content type, and populates the available relations from the MARC relators list. <img alt="Screenshot of adding a value into a typed relation field" src="../../assets/metadata_typed_relation_field.png" /></p>
 <p>The list of available relations for this Linked Agent field is configurable at '/admin/structure/types/manage/islandora_object/fields/node.islandora_object.field_linked_agent'.</p>
 <div class="admonition islandora">
 <p class="admonition-title">Typed relation tradeoffs</p>
@@ -4147,7 +4147,7 @@ rdf.mapping.node.your_content_type.yml
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     

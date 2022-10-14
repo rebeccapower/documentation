@@ -354,6 +354,28 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/starter-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Islandora Starter Site
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2238,28 +2260,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-documentation/islandora_defaults_reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Islandora defaults
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../user-documentation/jwt-authentication/" class="md-nav__link">
         
   
@@ -3570,6 +3570,10 @@
 
 
 <h1 id="configuring-drupal">Configuring Drupal<a class="headerlink" href="#configuring-drupal" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Needs Maintenance</p>
+<p>The manual installation documentation is in need of attention. We are aware that some components no longer work as documented here. If you are interested in helping us improve the documentation, please see <a href="../../../contributing/CONTRIBUTING">Contributing</a>.</p>
+</div>
 <p>After all of the above pieces are in place, installed, configured, started, and otherwise prepared, the last thing we need to do is to finally configure the front-end Drupal instance to wire all the installed components together.</p>
 <h2 id="drupal-pre-configuration">Drupal Pre-Configuration<a class="headerlink" href="#drupal-pre-configuration" title="Permanent link">&para;</a></h2>
 <h3 id="settingsphp"><code>settings.php</code><a class="headerlink" href="#settingsphp" title="Permanent link">&para;</a></h3>
@@ -3580,11 +3584,10 @@
 <p>Some additional settings will need to be established in your default <code>settings.php</code> before Drupal-side configuration can occur.</p>
 <p>The below configuration will establish <code>localhost</code> as a trusted host pattern, but on production sites this will need to be expanded to include the actual host patterns used by the site.</p>
 <p><code>/opt/drupal/web/sites/default/settings.php</code></p>
-<p><strong>Before</strong>:</p>
-<blockquote>
-<p>789 |   'driver' =&gt; 'pgsql',</p>
-<p>790 | );</p>
-</blockquote>
+<p><strong>Before</strong> (at around line 789):</p>
+<pre><code>'driver' =&gt; 'pgsql',
+);
+</code></pre>
 <p><strong>After</strong>:</p>
 <pre><code>'driver' =&gt; 'pgsql',
 );
@@ -3594,12 +3597,12 @@ $settings['trusted_host_patterns'] = [
 ];
 
 $settings['flysystem'] = [
- 'fedora' =&gt; [
- 'driver' =&gt; 'fedora',
- 'config' =&gt; [
-  'root' =&gt; 'http://localhost:8080/fcrepo/rest/',
- ],
-],
+  'fedora' =&gt; [
+    'driver' =&gt; 'fedora',
+    'config' =&gt; [
+      'root' =&gt; 'http://localhost:8080/fcrepo/rest/',
+    ],
+  ],
 ];
 </code></pre>
 <p>Once this is done, refresh the cache to take hold of the new settings.</p>
@@ -3607,36 +3610,42 @@ $settings['flysystem'] = [
 drush -y cr
 </code></pre>
 <h2 id="islandora">Islandora<a class="headerlink" href="#islandora" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Skip this by using the Islandora Starter Site</p>
+<p>The Islandora Starter Site, which was presented as an option in the <a href="installing_composer_drush_and_drupal">"Installing Composer, Drush, and Drupal"</a> step,
+installs Islandora and other modules and configures them, allowing you to skip this section. You may want to use this manual method in the case where you want
+to pick and choose which Islandora modules you use.</p>
+</div>
 <h3 id="downloading-islandora">Downloading Islandora<a class="headerlink" href="#downloading-islandora" title="Permanent link">&para;</a></h3>
-<p>The Islandora Drupal module contains the core code to create a repository ecosystem in a Drupal environment. It also includes several submodules; of importance to us is <code>islandora_core_feature</code>, which contains the key configurations that turn a Drupal site into an Islandora site.</p>
-<p>Islandora also provides an <a href="https://github.com/Islandora/islandora_defaults"><code>islandora_defaults</code></a> module that contains additional configurations considered an appropriate launching point for configuring a site. We're going to first enable the <code>islandora_defaults</code> module before doing any wiring on the front-end.</p>
+<p>The Islandora Drupal module contains the core code to create a repository ecosystem in a Drupal environment. It also includes several submodules; of importance to us is <code>islandora_core_feature</code>, which contains the key configurations that allow you to use Islandora features.</p>
 <p>Take note of some of the other comments in the below bash script for an idea of what the other components are expected, and which may be considered optional.</p>
 <pre><code class="language-bash">cd /opt/drupal
-# This is a convenience piece that will help speed up most of the rest of our
-# process working with Composer and Drupal.
-sudo -u www-data composer require zaporylie/composer-drupal-optimizations:^1.0
 # Since islandora_defaults is near the bottom of the dependency chain, requiring
 # it will get most of the modules and libraries we need to deploy a standard
 # Islandora site.
-sudo -u www-data composer require islandora/islandora_defaults:dev-8.x-1.x
+sudo -u www-data composer require &quot;drupal/flysystem:^2.0@alpha&quot;
+sudo -u www-data composer require &quot;islandora/islandora:^2.4&quot;
+sudo -u www-data composer require &quot;islandora/controlled_access_terms:^2&quot;
+sudo -u www-data composer require &quot;islandora/openseadragon:^2&quot;
+
 # These can be considered important or required depending on your site's
 # requirements; some of them represent dependencies of Islandora submodules.
-sudo -u www-data composer require drupal/pdf:1.x-dev
-sudo -u www-data composer require drupal/rest_oai_pmh:^1.0
-sudo -u www-data composer require drupal/facets:^1.3
-sudo -u www-data composer require drupal/restui:^1.16
-sudo -u www-data composer require drupal/rdfui:^1.0-beta1
-sudo -u www-data composer require drupal/content_browser:^1.0@alpha
+sudo -u www-data composer require &quot;drupal/pdf:1.1&quot;
+sudo -u www-data composer require &quot;drupal/rest_oai_pmh:^2.0@beta&quot;
+sudo -u www-data composer require &quot;drupal/search_api_solr:^4.2&quot;
+sudo -u www-data composer require &quot;drupal/facets:^2&quot;
+sudo -u www-data composer require &quot;drupal/content_browser:^1.0@alpha&quot; ## TODO do we need this?
+sudo -u www-data composer require &quot;drupal/field_permissions:^1&quot;
+sudo -u www-data composer require &quot;drupal/transliterate_filenames:^2.0&quot;
+
 # These tend to be good to enable for a development environment, or just for a
 # higher quality of life when managing Islandora. That being said, devel should
 # NEVER be enabled on a production environment, as it intentionally gives the
 # user tools that compromise the security of a site.
+sudo -u www-data composer require drupal/restui:^1.21
 sudo -u www-data composer require drupal/console:~1.0
 sudo -u www-data composer require drupal/devel:^2.0
 sudo -u www-data composer require drupal/admin_toolbar:^2.0
-# Islandora also provides a theme called Carapace designed to work well out of
-# the box with an Islandora site.
-sudo -u www-data composer require islandora/carapace:dev-8.x-3.x
 </code></pre>
 <h3 id="enabling-downloaded-components">Enabling Downloaded Components<a class="headerlink" href="#enabling-downloaded-components" title="Permanent link">&para;</a></h3>
 <p>Components we've now downloaded using <code>composer require</code> can be enabled simultaneously via <code>drush</code>, which will ensure they are installed in the correct dependent order. Enabling <code>islandora_defaults</code> will also ensure all content types and configurations are set up in Islandora. The installation process for all of these modules will likely take some time.</p>
@@ -3703,7 +3712,7 @@ drush -y views:enable display_media
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 30, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       </span>
     
     
