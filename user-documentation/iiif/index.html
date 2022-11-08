@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6+insiders-4.26.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9+insiders-4.26.2">
     
     
       
@@ -28,7 +28,7 @@
       <link rel="stylesheet" href="../../assets/stylesheets/main.fa1d38d9.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
         
           
           
@@ -66,7 +66,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="blue">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -1961,6 +1961,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-iiif-in-the-islandora-starter-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using IIIF in the Islandora Starter Site
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#looking-under-the-hood-and-beyond" class="md-nav__link">
     <span class="md-ellipsis">
       Looking under the hood (and beyond)
@@ -3337,6 +3346,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-iiif-in-the-islandora-starter-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using IIIF in the Islandora Starter Site
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#looking-under-the-hood-and-beyond" class="md-nav__link">
     <span class="md-ellipsis">
       Looking under the hood (and beyond)
@@ -3369,17 +3387,22 @@
 <p><a href="https://iiif.io/">IIIF</a> is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform like Islandora at a general level is that image-based objects such as (still) images and paged content can be managed by Islandora but viewed in external applications, and that Islandora can bring in image-based content from elsewhere to supplement locally managed content. If this intrigues you, see the section "Looking under the hood (and beyond)" below.</p>
 <p>At a practical level, because Islandora supports several of the IIIF specifications, we can:</p>
 <ul>
-<li>Zoom, pan, and rotate images within OpenSeadragon</li>
+<li>Zoom, pan, and rotate images within a IIIF-compliant <a href="../file_viewers">viewer</a> like OpenSeadragon or Mirador</li>
 <li>Islandora uses an IIIF-compliant image server (by default, <a href="https://cantaloupe-project.github.io/">Cantaloupe</a>) that utilizes the <a href="https://iiif.io/api/image/2.1/">IIIF Image API</a>. This capability is similar to what Islandora 7.x users experience when they view a Large Image.</li>
 <li>Display thumbnails for all pages of a book or newspaper issue within image viewers</li>
 <li>IIIF-compliant image viewers such as OpenSeadragon or Mirador can display a "collection" of images such as all the pages of a book or newspaper issue using the <a href="https://iiif.io/api/presentation/2.1/">IIIF Presentation API</a>. For example, here is a screenshot of OpenSeadragon rendering all the pages of a book:</li>
 </ul>
 <p><img alt="OpenSeadragon rendering book pages" src="../../assets/osd_collection_mode.png" /></p>
 <h2 id="using-iiif-in-islandora">Using IIIF in Islandora<a class="headerlink" href="#using-iiif-in-islandora" title="Permanent link">&para;</a></h2>
-<p>Implementation of the IIIF Presentation API is new in Islandora, and using it is as simple as configuring a Context (in fact, you don't even need to configure it; the Context, OpenSeadragon Block, already exists by default).</p>
-<!-- todo: Put a link to paged-content.md below when it exists. -->
-<p>To use this Context, all that is required is for your book or newspaper (or other paged content) to be given a model of "Paged Content" or "Publication Issue". Then, in the Open Seadragon Block Context, make sure the term used in the "Node has term" condition (you can register more than one term there). Now, when you view a paged content Islandora object, you will see thumbnails of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above.</p>
-<p>You can change how the paged content thumbnails are arranged in the OpenSeadragon viewport by doing the following:</p>
+<p>If you're not using one of our provisioning tools, you will need to:
+* install and configure the Cantaloupe (or another IIIF-compliant) image server
+* install a <a href="../file-viewers">viewer</a> module and configure it to point to the IIIF Image server location
+* if using the viewer to show single images, configure it as a file formatter in one of the display modes for your media.
+* if using the viewer to show multi-paged content, install the <a href="https://github.com/Islandora/islandora/tree/2.x/modules/islandora_iiif">Islandora IIIF</a> module and create a IIIF view (see the one in the Starter Site as an example), then configure the viewer's <em>block</em> to show up where desired (see below for details on how it could be configured)</p>
+<h2 id="using-iiif-in-the-islandora-starter-site">Using IIIF in the Islandora Starter Site<a class="headerlink" href="#using-iiif-in-the-islandora-starter-site" title="Permanent link">&para;</a></h2>
+<p>The Islandora Starter Site uses a Context to automatically use the IIIF Presentation API for showing <a href="../paged-content">paged content</a>.</p>
+<p>To use this Context, give your book or newspaper (or other paged content) a model of "Paged Content" or "Publication Issue". Then, in the <em>Paged Content - Openseadragon</em> Context, make sure the term used is in the "Node has term" condition (you can register more than one term there). Now, when you view a paged content Islandora node, you will see service files of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above.</p>
+<p>You can change how the paged content images are arranged in the OpenSeadragon viewport by doing the following:</p>
 <ol>
 <li>Visit <code>admin/config/media/openseadragon</code></li>
 <li>Scroll to the bottom, where you will see the "Collection Mode" options.</li>
@@ -3411,7 +3434,7 @@
         <span class="md-icon" title="Date of last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2022</span>
       </span>
     
     
@@ -3512,7 +3535,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.01b2e45f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b9c29124.min.js"></script>
       
     
   </body>
