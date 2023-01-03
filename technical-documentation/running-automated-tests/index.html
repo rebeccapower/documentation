@@ -3875,15 +3875,14 @@
 
 
 <h1 id="running-automated-tests">Running Automated Tests<a class="headerlink" href="#running-automated-tests" title="Permanent link">&para;</a></h1>
-<p>The simpletest module (formerly the subject of this page) has been deprecated.</p>
-<p>To run tests, see <a href="https://www.drupal.org/docs/automated-testing/phpunit-in-drupal">Drupal Documentation on PHPUnit in Drupal</a>.</p>
+<p>See the <a href="https://www.drupal.org/docs/automated-testing/phpunit-in-drupal">Drupal Documentation on PHPUnit in Drupal</a>.</p>
 <h1 id="setting-up-phpunit-in-isle">Setting up PhpUnit in ISLE<a class="headerlink" href="#setting-up-phpunit-in-isle" title="Permanent link">&para;</a></h1>
-<p>Before you can use phpunit, you must first install the following modules.</p>
+<p>Before you can use phpunit, you must first install the following: </p>
 <p><code>composer require --dev -W phpspec/prophecy-phpunit drupal/core-dev</code></p>
-<p>after that you need to make the database port available to PHPUnit, to do that find the section <code>image: islandora/mariadb</code> in the <code>docker-composer</code> and set the value of the label <code>traefik.enable</code> to true.</p>
-<p>apply the changes made to the <code>docker_compose</code> using <code>docker compose up -d</code>.</p>
+<p>After that, you need to make the database port available to PHPUnit. To do that, edit <code>docker-compose.yml</code> and find the section including <code>image: islandora/mariadb[version number]</code>. Shortly below is a <code>labels:</code> heading; set the value of the <code>traefik.enable:</code> to <code>"true"</code>.</p>
+<p>Apply the changes made to the <code>docker_compose.yml</code> using <code>docker compose up -d</code>.</p>
 <h2 id="running-phpunit-in-isle">Running PHPUnit in Isle<a class="headerlink" href="#running-phpunit-in-isle" title="Permanent link">&para;</a></h2>
-<p>follow the <code>Configure PHPUnit</code> and <code>Create a directory for HTML output</code> sections in <a href="https://www.drupal.org/docs/automated-testing/phpunit-in-drupal/running-phpunit-tests">Drupal Documentation on running phpunit tests</a> to make a phpunit.xml.</p>
+<p>Follow the <code>Configure PHPUnit</code> and <code>Create a directory for HTML output</code> sections in <a href="https://www.drupal.org/docs/automated-testing/phpunit-in-drupal/running-phpunit-tests">Drupal Documentation on running phpunit tests</a> to make a phpunit.xml.</p>
 <p>phpunit tag's 'bootstrap' attribute default value should be changed if it is placed in any directory other than <code>codebase/web/core</code>.</p>
 <p>In ISLE, the value of <code>SIMPLETEST_DB</code> variable should look like <code>mysql://username:db_password@islandora.traefik.me:3306/db_name</code>.</p>
 <p>you can find your db_password in <code>codebase/web/sites/default/settings.php</code>.</p>
@@ -3893,9 +3892,10 @@
 <p><em>Directories are relative, this assumes you're in the <code>codebase</code> directory.</em></p>
 <p>or if your phpunit.xml is in a different directory, then use the -c flag to specify the path to the directory containing phpunit.xml:</p>
 <p><code>vendor/bin/phpunit -c web/core web/modules/contrib/islandora/tests/src/Functional/DeleteNodeWithMediaAndFile.php</code></p>
-<h2 id="setting-up-phpunit-in-phpstorm">Setting up phpunit in PHPStorm<a class="headerlink" href="#setting-up-phpunit-in-phpstorm" title="Permanent link">&para;</a></h2>
-<p>to setup phpunit with phpstorm, use the following article</p>
-<p><a href="https://www.drupal.org/docs/automated-testing/phpunit-in-drupal/running-phpunit-tests-within-phpstorm">Drupal Documentation on running phpunit tests</a></p>
+<h2 id="setting-up-phpunit-in-phpstorm">Setting up PHPUnit in PHPStorm<a class="headerlink" href="#setting-up-phpunit-in-phpstorm" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.drupal.org/docs/automated-testing/phpunit-in-drupal/running-phpunit-tests-within-phpstorm">Drupal Documentation on running phpunit tests</a></li>
+</ul>
 
   
     
