@@ -1096,6 +1096,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#requesting-certifcates-through-acme-and-external-account-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Certifcates through ACME and External Account Binding
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4104,6 +4115,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#requesting-certifcates-through-acme-and-external-account-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Certifcates through ACME and External Account Binding
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4213,6 +4235,19 @@ docker-compose restart traefik
 <p class="admonition-title">traefik.me Certificate Note</p>
 <p>Please note that sometimes the upstream provider of the traefik.me certificate takes a couple of days to update the certificiate after it expires or is accidently revoked.</p>
 </div>
+<h3 id="requesting-certifcates-through-acme-and-external-account-binding">Requesting Certifcates through ACME and External Account Binding<a class="headerlink" href="#requesting-certifcates-through-acme-and-external-account-binding" title="Permanent link">&para;</a></h3>
+<p>To request certificates through another Certificate Authority (CA) that supports External Accounting Binding through ACME such as InCommon or ZeroSSL you will need to add the following to your <code>.env</code> file:</p>
+<pre><code>USE_ACME=true
+ACME_EMAIL=your-email@example.org
+ACME_SERVER=
+ACME_EAB_KID=
+ACME_EAB_HMAC=
+</code></pre>
+<p>Where <code>ACME_SERVER</code> is the CA server to use, <code>ACME_EAB_KID</code> is the key identifer from the External CA, and <code>ACME_EAB_HMAC</code> is the HMAC key from the External CA.</p>
+<p>Once you have added these commands you will need to run the following commands:</p>
+<pre><code>make -B docker-compose.yml
+make up
+</code></pre>
 <h2 id="building-and-deploying-your-custom-container">Building and Deploying Your Custom Container<a class="headerlink" href="#building-and-deploying-your-custom-container" title="Permanent link">&para;</a></h2>
 <p>First, set your <code>ENVIRONMENT</code> variable to <code>custom</code> in  your .env file in addition to the changes outlined above</p>
 <pre><code>ENVIRONMENT=custom
