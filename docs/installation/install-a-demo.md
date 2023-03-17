@@ -19,14 +19,14 @@ graphical user interface for all major platforms.
 
 <https://www.docker.com/products/docker-desktop>
 
-Follow the link above and select the appropriate system and follow the
+Follow the link above, select the appropriate system, and follow the
 installation instructions.
 
-For Windows 10, you may receive the "Docker Failed to Start" Error message. To resolve this:
-    
-* Download WSL 2 from Step 4 in [these instructions](https://learn.microsoft.com/en-ca/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)--do not do any other steps in these instructions
-* Under Windows ‘Firewall & Network Protection’, ‘Allow an app through the firewall’, and ‘Change settings’ to select the ‘Private’ box for ‘Virtual Machine Monitoring’
-* Restart computer for all changes to take effect
+!!! Note
+    For Windows 10, you may receive the "Docker Failed to Start" Error message. To resolve this:
+    * Download WSL 2 from Step 4 in [these instructions](https://learn.microsoft.com/en-ca/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)--do not do any other steps in these instructions
+    * Under Windows ‘Firewall & Network Protection’, ‘Allow an app through the firewall’, and ‘Change settings’ to select the ‘Private’ box for ‘Virtual Machine Monitoring’
+    * Restart computer for all changes to take effect
 
 
 !!! Note
@@ -63,9 +63,9 @@ and running. You can now setup your demo.
 Get a Yaml file
 --------------------------------------------------------------
 
-For the older, install-profile based demo, you must Generate docker-compose.yml. For the newer, starter-site based demo, you only need to download the yaml file at the link above. 
+For the newer starter-site based demo you only need to download the yaml file at the link above and skip to 'Create Stack' in the instructions below. For the older install-profile based demo you must Generate docker-compose.yml following the instructions below. 
 
-Generate docker-compose.yml 
+Generate docker-compose.yml (install-profile based demo only)
 --------------------------------------------------------------
 
 In this package there are some platform specific scripts. Please **double
@@ -95,7 +95,7 @@ Desktop Dashboard.
 
 1. Open Docker Desktop.
 2. Click on Portainer.
-3. If you see the Quick Setup Environment Wizard, click “Get Started". Otherwise, select your local environment under "Environments".
+3. If you see the Quick Setup Environment Wizard, click “Get Started" and select your local environment. Otherwise, select your local environment under "Environments".
 4. Open the sidebar.
 5. Click on **Stacks**.
 6. Click **Add Stack**.
