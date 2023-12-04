@@ -45,10 +45,10 @@ memory=4GB
 processors=2
 ```
 2. Modify the numbers to reflect how much you want to allocate to Docker Desktop (i.e. if you only have 4GB of RAM then allocate 2GB).
-     * Save As and select ‘All File Types’ from the dropdown.
-     * Name the file x.wslconfig and save it.
-     * Go to the location of the saved file and rename it, removing the ‘x’.
-     * The file should look like this:
+    * Save As and select ‘All File Types’ from the dropdown.
+    * Name the file x.wslconfig and save it.
+    * Go to the location of the saved file and rename it, removing the ‘x’.
+    * The file should look like this:
 ![wslconfigimage](https://github.com/Islandora/documentation/assets/122306010/6833bc2b-0151-4053-b902-b764c1e44cc4)
 3. Put the .wslconfig file in the appropriate location.
     * In your File Explorer address bar type ‘%UserProfile% and hit enter.
